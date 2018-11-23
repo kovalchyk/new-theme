@@ -29,7 +29,7 @@ if (method_exists($this->item, 'canEdit') && $this->item->canEdit()) {
     <div class="item-edit-link uk-margin-bottom">
         <a href="<?php echo JRoute::_($edit_link); ?>" title="<?php echo JText::_('Edit Item'); ?>"
            class="uk-button uk-button-primary edit-item">
-            <i class="uk-icon-edit"></i>
+            <span uk-icon="icon: pencil"></span>
             <?php echo JText::_('Edit Item'); ?>
         </a>
     </div>
