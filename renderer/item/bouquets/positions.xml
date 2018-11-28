@@ -46,9 +46,10 @@
     <positions layout="related">
         <position name="title">Title</position>
         <position name="image">Image</position>
-        <position name="properties">Properties</position>
-        <position name="text">Text</position>
-        <position name="meta">Meta</position>
+        <position name="price">Price</position>
+        <position name="rating">Rating</position>
+        <position name="buttonbuy">Button Buy</position>
+        <position name="favourite">Favourite</position>
     </positions>
 
     <positions layout="subcategory_item">
