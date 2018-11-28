@@ -83,7 +83,7 @@ echo $this->partial('basket', 'table.styles');
                 } ?>
             </td>
             <td class="jbcart-delete">
-                <a class="uk-button uk-button-danger uk-button-small round jsDelete"><i class="uk-icon-trash-o"></i></a>
+                <a class="uk-button uk-button-danger uk-button-small round jsDelete"><span uk-icon="icon: trash"></span></a>
             </td>
         </tr>
     <?php endforeach; ?>
