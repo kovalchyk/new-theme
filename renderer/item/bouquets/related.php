@@ -20,14 +20,14 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 ?>
 
 <?php if ($this->checkPosition('title')) : ?>
-    <h5 class="item-title"><?php echo $this->renderPosition('title'); ?></h5>
+    <h5 class="uk-h4"><?php echo $this->renderPosition('title'); ?></h5>
 <?php endif; ?>
 
 
-<?php if ($this->checkPosition('properties')) : ?>
-    <ul class="item-properties">
-        <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
-    </ul>
+<?php if ($this->checkPosition('price')) : ?>
+    <div class="item-price">
+        <?php echo $this->renderPosition('price'); ?>
+</div>
 <?php endif; ?>
 
 
@@ -38,15 +38,15 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 <?php endif; ?>
 
 
-<?php if ($this->checkPosition('text')) : ?>
-    <?php echo $this->renderPosition('text', array('style' => 'block')); ?>
+<?php if ($this->checkPosition('rating')) : ?>
+    <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
 <?php endif; ?>
 
 
-<?php if ($this->checkPosition('meta')) : ?>
-    <ul class="item-metadata">
-        <?php echo $this->renderPosition('meta', array('style' => 'list')); ?>
-    </ul>
+<?php if ($this->checkPosition('buttonbuy')) : ?>
+    <div class="item-buttonbuy">
+        <?php echo $this->renderPosition('buttonbuy', array('style' => 'block')); ?>
+</div>
 <?php endif; ?>
 
 <div class="uk-clearfix"></div>
