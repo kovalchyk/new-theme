@@ -21,35 +21,28 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
 ?>
 
-
-
-
-
 <div class="uk-position-relative uk-panel">
     <!-- Шапка якуновича -->
     <div class="uk-container uk-margin-remove-vertical">
         <div class="uk-grid-collapse" uk-grid>
             <div class="uk-width-1-1@m uk-grid-item-match">
                 <div class="uk-tile-default uk-tile uk-tile-small">
-                    
                     <!-- Элемент заголовка -->
                     <?php if ($this->checkPosition('title')) : ?>
                         <h1 class="uk-text-center uk-heading-primary uk-heading-line" uk-scrollspy-class>
                             <span><?php echo $this->renderPosition('title'); ?></span>
                         </h1>
                     <?php endif; ?>
-
                     <!-- Блок Хлебных крошек и еще чего-то -->
                     <div class="">
                         <div class="uk-clearfix uk-text-small">
-                            <div class="uk-float-left">
+                            <div class="uk-float-left uk-margin-remove">
                                 <!-- модуль хлебных крошек -->
-                                <ul class="uk-breadcrumb uk-margin-remove">
-                                    <li><a href="#">Главная</a></li>
-                                    <li><a href="#">Букеты </a></li>
-                                    <li class="uk-disabled"><a>Букеты из 101 розы</a></li>
-                                    <li class="uk-visible@s"><span>Дурацкое название</span></li>
-                                </ul>
+                                <!-- В модуле необходимо убрать нижний маджин -->
+                                <?php if ($this->checkPosition('breadcrumbs')) : ?>
+                                    <?php echo $this->renderPosition('breadcrumbs'); ?>
+                                <?php endif; ?>
+
                             </div>
                             <div class="uk-visible@s uk-float-right">
                                 <!-- Элемент до инфы -->
@@ -81,11 +74,11 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
 
                         <!-- Элемент рейтинга -->
-                        <?php if ($this->checkPosition('meta')) : ?>
+                        <?php if ($this->checkPosition('rating')) : ?>
                         <div uk-scrollspy-class class="el-item uk-panel">
                             <div class="el-content uk-margin">
                                 <div class="uk-text-center">
-                                    <?php echo $this->renderPosition('meta', array('style' => 'block')); ?>
+                                    <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
                                 </div>
                             </div>
                         </div>
@@ -112,24 +105,28 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     <!-- Блок под картинкой для элементов бейджа и кнопки Избранное -->
                     <div class="">
                         <!-- Элемент бейджа -->
-                        <div class="badge-free-delivery uk-position-absolute">
-                            <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
-                        </div>
+                        <?php if ($this->checkPosition('badge')) : ?>
+                            <div class="badge-free-delivery uk-position-absolute">
+                                <?php /*echo $this->renderPosition('badge');*/ ?>
+                                <!-- ВРЕМЕННО -->
+                                <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
+                            </div>
+                        <?php endif; ?>
 
                         <!-- Элемент кнопки Избранное -->
 
-                        <?php if ($this->checkPosition('buttons')) : ?>
+                        <?php if ($this->checkPosition('favourite')) : ?>
                             <div class="button-favourite uk-position-absolute">
-                                <?php echo $this->renderPosition('buttons', array('style' => 'block')); ?>
+                                <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
                             </div>
                         <?php endif; ?>
                         <!-- конец -->
                     </div>
 
                     <!-- Блок элемента краткого описания -->
-                    <?php if ($this->checkPosition('text')) : ?>
+                    <?php if ($this->checkPosition('shorttext')) : ?>
                         <div class="short-description">
-                            <?php echo $this->renderPosition('text'); ?>
+                            <?php echo $this->renderPosition('shorttext'); ?>
                         </div>
                     <?php endif; ?>
 
@@ -146,9 +143,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                     <div class="uk-card uk-card-primary uk-card-body">
                                         <!-- Возможно, рендеринг позиции названия из элемента цены -->
 
-                                        <?php if ($this->checkPosition('social')) : ?>
+                                        <?php if ($this->checkPosition('subtitle')) : ?>
                                             <h2 class="uk-h4 uk-text-truncate uk-margin-small">
-                                                <?php echo $this->renderPosition('social'); ?>
+                                                <?php echo $this->renderPosition('subtitle'); ?>
                                             </h2>
                                         <?php endif; ?>
 
@@ -259,11 +256,13 @@ $tabsId = $this->app->jbstring->getId('tabs');
         <div uk-grid>
             <div class="uk-width-1-1@m uk-grid-item-match">
                 <div class="uk-tile-muted uk-tile uk-tile-small">
+
                     <h3 class="uk-text-center uk-heading-line" uk-scrollspy-class>
                         <span>Детально о букете</span>
                     </h3>
 
                     <div class="uk-margin" uk-scrollspy-class>
+                        <!-- Табы свитчера -->
                         <ul uk-switcher="connect: #js-952;animation: uk-animation-fade" class="uk-margin uk-subnav el-nav">
                             <?php if ($this->checkPosition('properties')) : ?>
                                 <li>
@@ -274,7 +273,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                 </li>
                             <?php endif; ?>
 
-                            <?php if ($this->checkPosition('text')) : ?>
+                            <?php if ($this->checkPosition('fulltext')) : ?>
                                 <li>
                                     <a href="#description">
                                         <span uk-icon="icon: info"></span>
@@ -301,75 +300,57 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                     </a>
                                 </li>
                             <?php endif; ?>
-
                         </ul>
 
-                        <!--  -->
-
+                        <!-- Вкладки свитчера -->
                         <ul id="js-952" class="uk-switcher">
-                            <li class="el-item">
-                                <!-- Элемент списка характеристик товара -->
-                                <div class="el-content uk-margin">
-                                    <div class="uk-grid-margin uk-grid-divider" uk-grid>
-                                        <div class="uk-width-expand@m uk-first-column">
-                                            <div class="uk-margin">
-                                                <?php if ($this->checkPosition('properties')) : ?>
-                                                    <table class="uk-table uk-table-hover uk-table-striped">
-                                                        <?php echo $this->renderPosition('properties', array(
-                                                            'tooltip' => true,
-                                                            'style'   => 'jbtable',
-                                                        )); ?>
-                                                    </table>
-                                                <?php endif; ?>
-                                            </div>
-                                        </div>
-                                        <!-- Блок элемента значков -->
-                                        <div class="uk-width-expand@m">
-                                            <div class="uk-margin uk-display-inline">
-                                                <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
-                                            </div>
-                                            <div class="uk-margin uk-display-inline">
-                                                <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
-                                            </div>
-                                            <div class="uk-margin uk-display-inline">
-                                                <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="el-item">
-                                <!-- Элемент полного описания товара -->
-                                <div class="el-content uk-margin">
-                                    <p>Интернет-магазин Цветочный клуб предлагает заказать букет цветов, подходящий к
-                                        любому торжеству,
-                                        купленный по любому поводу и без него. Всё, чем живёт сердце, так легко
-                                        выразить цветами.
-                                    </p>
-                                    <p>Наш сервис работает в Москве с 8-00 до 22-00. Создаём красивые букеты цветов,
-                                        флористические композиции.
-                                        Посмотрите товар прямо сейчас. Дополнительно можете ознакомиться в галерее
-                                        букетов с примерами
-                                        ежедневных работ наших флористов.
-                                    </p>
-                                    <p>Магазин предлагает</p>
-                                    <p>Успейте <a href="/bukety/den-rozhdeniya">купить</a>, пока букеты не разобрали.</p>
-                                </div>
-                            </li>
-
-
-                            <?php if ($this->checkPosition('gallery')) : ?>
-                                <li id="tab-gallery" class="el-item">
-                                    <!-- Элемент полного описания товара -->
+                            <?php if ($this->checkPosition('properties')) : ?>
+                                <li class="el-item">
+                                    <!-- Элемент списка характеристик товара -->
                                     <div class="el-content uk-margin">
-                                    <?php echo $this->renderPosition('gallery', array(
-                                            'labelTag' => 'h4',
-                                            'style'    => 'jbblock',
-                                        )); ?>
+                                        <div class="uk-grid-margin uk-grid-divider" uk-grid>
+                                            <div class="uk-width-expand@m uk-first-column">
+                                                <div class="uk-margin uk-text-small">
+                                                    <ul class="uk-list uk-list-divider">
+                                                        <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <!-- Блок элемента значков -->
+                                            <div class="uk-width-expand@m">
+                                                <div class="uk-margin uk-display-inline">
+                                                    <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
+                                                </div>
+                                                <div class="uk-margin uk-display-inline">
+                                                    <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
+                                                </div>
+                                                <div class="uk-margin uk-display-inline">
+                                                    <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </li>
                             <?php endif; ?>
                             
+                            <?php if ($this->checkPosition('fulltext')) : ?>
+                                <li class="el-item">
+                                    <!-- Элемент полного описания товара -->
+                                    <div class="el-content uk-margin">
+                                        <?php echo $this->renderPosition('fulltext'); ?>
+                                    </div>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if ($this->checkPosition('gallery')) : ?>
+                                <li id="tab-gallery" class="el-item">
+                                    <!-- Элемент дополнительных фото товара -->
+                                    <div class="el-content uk-margin uk-flex">
+                                        <?php echo $this->renderPosition('gallery'); ?>
+                                    </div>
+                                </li>
+                            <?php endif; ?>
+
                             <?php if ($this->checkPosition('comments')) : ?>
                                 <li id="tab-comments" class="el-item">
                                     <!-- Элемент комментариев -->
@@ -384,16 +365,250 @@ $tabsId = $this->app->jbstring->getId('tabs');
             </div>
         </div>
     </div>
+
+    <!-- Контейнер похожих букетов -->
+    <div class="uk-container uk-margin-remove-vertical">
+        <div uk-grid>
+            <div class="uk-width-1-1@m uk-grid-item-match">
+
+                <!-- Элемент похожих товаров -->
+                <div class="uk-tile-primary uk-tile uk-tile-small">
+                    <h3 class="uk-heading-line" uk-scrollspy-class>
+                        <span>Похожие букеты</span>
+                    </h3>
+                    
+                    <div class="uk-margin uk-text-left" uk-scrollspy-class uk-slider>
+                        <div class="uk-position-relative">
+                            <ul class="uk-slider-items uk-grid uk-grid-small uk-grid-divider">
+                                <!-- Итем рилэйтед -->
+                                <li class="el-item uk-width-1-1 uk-width-1-2@s uk-width-1-3@m">
+                                    <div class="uk-cover-container uk-transition-toggle" tabindex="0">
+                                        <!-- Элемент картинки -->
+                                        <img src="images/products/demo/demo-buket-4.jpg" srcset="images/products/demo/demo-buket-4.jpg 450w, images/products/demo/demo-buket-4.jpg 768w, images/products/demo/demo-buket-4.jpg 900w"
+                                            sizes="(min-width: 450px) 450px" data-width="1200" data-height="1440" class="el-image uk-transition-scale-up uk-transition-opaque"
+                                            alt>
+                                        <div class="uk-overlay uk-position-bottom uk-overlay-default">
+                                            <div class="el-content uk-margin">
+                                                <div class="teaser-name">
+                                                    <!-- Название итема -->
+                                                    <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove">Букет из 51 розовой розы</h3>
+                                                </div>
+                                                <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small" uk-grid>
+                                                    <!-- Цена итема -->
+                                                    <div class="price">
+                                                        <h3 class="uk-h4">17 000 <span class="">₽</span></h3>
+                                                    </div>
+                                                    <!-- Элемент рейтинга -->
+                                                    <div class="teaser-rating">
+                                                        <div class="uk-text-right">
+                                                            <div style="zoom: 1" class="">
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-margin-remove-bottom uk-grid-small uk-grid-margin-small" uk-grid>
+                                                    <div class="uk-width-2-3 uk-first-column">
+                                                        <div class="cart-button">
+                                                            <a class="uk-button uk-button-primary uk-width-1-1" href="#" title="Покласть товар в корзину">
+                                                                <span uk-icon="cart" class="uk-icon"></span>
+                                                                <span class="uk-text-middle">Купить</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-expand">
+                                                        <div class="favorite-button uk-text-right">
+                                                            <a class="uk-button uk-button-secondary" href="#" title="Добавить товар в закладки">
+                                                                <span uk-icon="heart" class="uk-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+
+                                <li class="el-item uk-width-1-1 uk-width-1-2@s uk-width-1-3@m">
+                                    <div class="uk-cover-container uk-transition-toggle" tabindex="0">
+                                        <img src="images/products/demo/demo-buket-4.jpg" srcset="images/products/demo/demo-buket-4.jpg 450w, images/products/demo/demo-buket-4.jpg 768w, images/products/demo/demo-buket-4.jpg 900w"
+                                            sizes="(min-width: 450px) 450px" data-width="1200" data-height="1440" class="el-image uk-transition-scale-up uk-transition-opaque"
+                                            alt>
+                                        <div class="uk-overlay uk-position-bottom uk-overlay-default">
+                                            <div class="el-content uk-margin">
+                                                <div class="teaser-name">
+                                                    <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove">Букет
+                                                        из 51 розовой розы</h3>
+                                                </div>
+                                                <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small"
+                                                    uk-grid>
+                                                    <div class="price">
+                                                        <h3 class="uk-h4">17 000 <span class="">₽</span></h3>
+                                                    </div>
+                                                    <div class="teaser-rating">
+                                                        <div class="uk-text-right">
+                                                            <div style="zoom: 1" class="">
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-margin-remove-bottom uk-grid-small uk-grid-margin-small"
+                                                    uk-grid>
+                                                    <div class="uk-width-2-3 uk-first-column">
+                                                        <div class="cart-button">
+                                                            <a class="uk-button uk-button-primary uk-width-1-1" href="#"
+                                                                title="Покласть товар в корзину">
+                                                                <span uk-icon="cart" class="uk-icon"></span>
+                                                                <span class="uk-text-middle">Купить</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-expand">
+                                                        <div class="favorite-button uk-text-right">
+                                                            <a class="uk-button uk-button-secondary" href="#" title="Добавить товар в закладки">
+                                                                <span uk-icon="heart" class="uk-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="el-item uk-width-1-1 uk-width-1-2@s uk-width-1-3@m">
+                                    <div class="uk-cover-container uk-transition-toggle" tabindex="0">
+                                        <img src="images/products/demo/demo-buket-4.jpg" srcset="images/products/demo/demo-buket-4.jpg 450w, images/products/demo/demo-buket-4.jpg 768w, images/products/demo/demo-buket-4.jpg 900w"
+                                            sizes="(min-width: 450px) 450px" data-width="1200" data-height="1440" class="el-image uk-transition-scale-up uk-transition-opaque"
+                                            alt>
+                                        <div class="uk-overlay uk-position-bottom uk-overlay-default">
+                                            <div class="el-content uk-margin">
+                                                <div class="teaser-name">
+                                                    <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove">Букет
+                                                        из 51 розовой розы</h3>
+                                                </div>
+                                                <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small"
+                                                    uk-grid>
+                                                    <div class="price">
+                                                        <h3 class="uk-h4">17 000 <span class="">₽</span></h3>
+                                                    </div>
+                                                    <div class="teaser-rating">
+                                                        <div class="uk-text-right">
+                                                            <div style="zoom: 1" class="">
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-margin-remove-bottom uk-grid-small uk-grid-margin-small"
+                                                    uk-grid>
+                                                    <div class="uk-width-2-3 uk-first-column">
+                                                        <div class="cart-button">
+                                                            <a class="uk-button uk-button-primary uk-width-1-1" href="#"
+                                                                title="Покласть товар в корзину">
+                                                                <span uk-icon="cart" class="uk-icon"></span>
+                                                                <span class="uk-text-middle">Купить</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-expand">
+                                                        <div class="favorite-button uk-text-right">
+                                                            <a class="uk-button uk-button-secondary" href="#" title="Добавить товар в закладки">
+                                                                <span uk-icon="heart" class="uk-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="el-item uk-width-1-1 uk-width-1-2@s uk-width-1-3@m">
+                                    <div class="uk-cover-container uk-transition-toggle" tabindex="0">
+                                        <img src="images/products/demo/demo-buket-4.jpg" srcset="images/products/demo/demo-buket-4.jpg 450w, images/products/demo/demo-buket-4.jpg 768w, images/products/demo/demo-buket-4.jpg 900w"
+                                            sizes="(min-width: 450px) 450px" data-width="1200" data-height="1440" class="el-image uk-transition-scale-up uk-transition-opaque"
+                                            alt>
+                                        <div class="uk-overlay uk-position-bottom uk-overlay-default">
+                                            <div class="el-content uk-margin">
+                                                <div class="teaser-name">
+                                                    <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove">Букет
+                                                        из 51 розовой розы</h3>
+                                                </div>
+                                                <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small"
+                                                    uk-grid>
+                                                    <div class="price">
+                                                        <h3 class="uk-h4">17 000 <span class="">₽</span></h3>
+                                                    </div>
+                                                    <div class="teaser-rating">
+                                                        <div class="uk-text-right">
+                                                            <div style="zoom: 1" class="">
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                                <a uk-icon="icon: star" href="#"></a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="uk-margin-remove-bottom uk-grid-small uk-grid-margin-small"
+                                                    uk-grid>
+                                                    <div class="uk-width-2-3 uk-first-column">
+                                                        <div class="cart-button">
+                                                            <a class="uk-button uk-button-primary uk-width-1-1" href="#"
+                                                                title="Покласть товар в корзину">
+                                                                <span uk-icon="cart" class="uk-icon"></span>
+                                                                <span class="uk-text-middle">Купить</span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="uk-width-expand">
+                                                        <div class="favorite-button uk-text-right">
+                                                            <a class="uk-button uk-button-secondary" href="#" title="Добавить товар в закладки">
+                                                                <span uk-icon="heart" class="uk-icon"></span>
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <div>
+                                <a class="el-slidenav uk-position-medium uk-slidenav-large uk-position-center-left"
+                                    href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+                                <a class="el-slidenav uk-position-medium uk-slidenav-large uk-position-center-right"
+                                    href="#" uk-slidenav-next uk-slider-item="next"></a>
+                            </div>
+                        </div>
+                        <ul class="el-nav uk-slider-nav uk-dotnav uk-flex-center uk-margin-top uk-visible@s" uk-margin></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
 
 
 <?php if ($this->checkPosition('related')) : ?>
     <div class="uk-grid item-related">
-        <div class="uk-width-medium-1-1">
-            <?php echo $this->renderPosition('related', array(
-                'labelTag' => 'h4',
-                'style'    => 'jbblock',
-            )); ?>
-        </div>
+        <li>
+            <?php echo $this->renderPosition('related', array('style' => 'list')); ?>
+        </li>
     </div>
 <?php endif; ?>
