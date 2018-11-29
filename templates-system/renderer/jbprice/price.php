@@ -17,3 +17,4 @@ if ($this->checkPosition('price')) {
     echo '<div class="some-price-class">';
     echo $this->renderPosition('price');
     echo '</div>';
+}
