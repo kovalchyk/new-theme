@@ -123,18 +123,18 @@ class ElementJBImage extends ElementRepeatable implements iRepeatSubmittable
             $url    = $this->get('link');
             $rel    = $this->get('rel');
             $target = (int)$this->get('target') ? '_blank' : false;
-            $appendClass = ' uk-thumbnail uk-overlay';
+            $appendClass = ' el-link';
         } elseif ($template == 'itemlink') {
             if ($this->getItem()->getState()) {
                 $url   = $this->app->jbrouter->externalItem($this->_item);
                 $title = empty($title) ? $this->getItem()->name : $title;
             }
 
-            $appendClass = ' uk-thumbnail uk-overlay';
+            $appendClass = ' el-link';
 
         } elseif ($template == 'popup') {
 
-            $appendClass = 'jbimage-gallery uk-thumbnail uk-overlay';
+            $appendClass = 'jbimage-gallery el-link';
             if ((int)$params->get('group_popup', 1)) {
                 $rel = 'jbimage-gallery-' . $this->getItem()->id;
             }
