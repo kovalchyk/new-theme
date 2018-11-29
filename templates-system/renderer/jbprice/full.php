@@ -19,14 +19,6 @@ if ($this->checkPosition('attributes')) {
     echo '</div>';
 }
 
-
-
-
-
-
-
-
-
 if ($this->checkPosition('price') || $this->checkPosition('buttons')) { ?>
     <div class="uk-margin uk-card uk-card-default">
         <div class="uk-child-width-1-2 uk-grid-small uk-grid" uk-grid>
