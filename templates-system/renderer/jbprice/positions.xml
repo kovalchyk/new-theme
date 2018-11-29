@@ -21,6 +21,7 @@
     <positions layout="full">
         <position name="attributes">List</position>
         <position name="price">Price</position>
+        <position name="quantity">Quantity</position>
         <position name="buttons">Buttons</position>
     </positions>
 
