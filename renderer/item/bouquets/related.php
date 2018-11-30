@@ -37,14 +37,14 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                     <!-- Цена итема -->
                     <?php if ($this->checkPosition('price')) : ?>
                         <div class="price">
-                            <h3 class="uk-h4"><?php echo $this->renderPosition('price', array('style' => 'default')); ?></h3>
+                            <h3 class="uk-h4"><?php echo $this->renderPosition('price'); ?>+</h3>
                         </div>
                     <?php endif; ?>
                     <!-- Элемент рейтинга -->
                     <div class="teaser-rating">
                         <div class="uk-text-right">
                             <?php if ($this->checkPosition('rating')) : ?>
-                                <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
+                                <?php echo $this->renderPosition('rating'); ?>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -54,7 +54,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                         <div class="cart-button">
                             <?php if ($this->checkPosition('buttonbuy')) : ?>
                                 <div class="item-buttonbuy">
-                                    <?php echo $this->renderPosition('buttonbuy', array('style' => 'block')); ?>
+                                    <?php echo $this->renderPosition('buttonbuy'); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
@@ -63,7 +63,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                         <div class="favorite-button uk-text-right">
                             <?php if ($this->checkPosition('favourite')) : ?>
                                 <div class="item-favourite">
-                                    <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
+                                    <?php echo $this->renderPosition('favourite'); ?>
                                 </div>
                             <?php endif; ?>
                         </div>
