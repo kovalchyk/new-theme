@@ -17,5 +17,5 @@ defined('_JEXEC') or die('Restricted access');
 $sku = $this->getValue(true);
 
 if ($sku) : ?>
-    <span class="sku uk-badge"><?php echo $sku; ?></span>
+    <div class="sku">SKU: <span class="sku uk-label"><?php echo $sku; ?></span></div>
 <?php endif;
