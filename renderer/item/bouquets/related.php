@@ -37,7 +37,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                     <!-- Цена итема -->
                     <?php if ($this->checkPosition('price')) : ?>
                         <div class="price">
-                            <h3 class="uk-h4"><?php echo $this->renderPosition('price'); ?>+</h3>
+                            <h3 class="uk-h4"><?php echo $this->renderPosition('price'); ?></h3>
                         </div>
                     <?php endif; ?>
                     <!-- Элемент рейтинга -->
