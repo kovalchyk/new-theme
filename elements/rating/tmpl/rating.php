@@ -18,6 +18,12 @@ $id = $this->identifier.'-'.uniqid();
 ?>
 <div id="<?php echo $id; ?>" class="yoo-zoo rating">
 
+	<?php if ($show_message) : ?>
+	<div class="vote-message uk-margin-small uk-text-large">
+		<?php echo $rating.'/<strong>'.$stars.'</strong> '.JText::sprintf($votes == 1 ? 'rating %s vote' : 'rating %s votes', $votes); ?>
+	</div>
+	<?php endif; ?>
+
 	<div class="rating-container star<?php echo $stars; ?>">
 		<div class="previous-rating" style="width: <?php echo intval($rating / $stars * 100); ?>%;"></div>
 
@@ -25,18 +31,12 @@ $id = $this->identifier.'-'.uniqid();
 		<div class="current-rating">
 
 			<?php for($i = $stars; $i > 0; $i--) : ?>
-			<div class="stars star<?php echo $i; ?>" title="<?php echo $i.' '.JText::_('out of').' '.$stars; ?>"></div>
+			<div class="stars star<?php echo $i; ?>" uk-tooltip="<?php echo $i.' '.JText::_('out of').' '.$stars; ?>"></div>
 			<?php endfor ?>
 
 		</div>
 		<?php endif; ?>
 	</div>
-
-	<?php if ($show_message) : ?>
-	<div class="vote-message">
-		<?php echo $rating.'/<strong>'.$stars.'</strong> '.JText::sprintf($votes == 1 ? 'rating %s vote' : 'rating %s votes', $votes); ?>
-	</div>
-	<?php endif; ?>
 
 	<?php if ($show_microdata) : ?>
 	<div itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
