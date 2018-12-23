@@ -37,6 +37,7 @@
         <position name="text">Text</position>
         <position name="buttons">Buttons</position>
         <position name="quick-view">Quick view</position>
+        <position name="tags">Tags for JS filter</position>
     </positions>
 
     <positions layout="related">

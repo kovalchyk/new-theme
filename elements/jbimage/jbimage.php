@@ -107,7 +107,7 @@ class ElementJBImage extends ElementRepeatable implements iRepeatSubmittable
         $height = (int)$params->get('height', 0);
         $alt    = $title = empty($title) ? $this->getItem()->name : $title;
         $url    = $imagePopup = $appendClass = $target = $rel = '';
-        $imgClass = 'jbimage';
+        $imgClass = 'jbimage el-image uk-box-shadow-small uk-box-shadow-hover-medium';
 
         // get image
         if ($this->_isFileExists($this->get('file'))) {
@@ -165,7 +165,7 @@ class ElementJBImage extends ElementRepeatable implements iRepeatSubmittable
                     'imageAttrs' => $this->_buildAttrs(array(
                             'class'         => $imgClass . ' ' . $unique,
                             'alt'           => $alt,
-                            'title'         => $title,
+                            'uk-tooltip title'         => $title,
                             'src'           => $image->url,
                             'width'         => $image->width,
                             'height'        => $image->height,

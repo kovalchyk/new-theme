@@ -68,4 +68,32 @@ class JBTemplateUikit extends JBTemplate
         return $attrs;
     }
 
+    public function renderItem(Item $item, $defaultLayout = 'teaser', $htmlItem)
+    {
+        $attrs = array(
+            'class' => array(
+                'gjbzoo-item',
+                'gjbzoo-item-' . $item->type,
+                'gjbzoo-item-' . $defaultLayout,
+                'gjbzoo-item-' . $item->id
+            )
+        );
+ 
+        $output = $htmlItem;
+        if ($defaultLayout = 'related'){//убираем для типа related
+            $attrs  = $this->app->jbhtml->buildAttrs($attrs);
+ 
+            $wrapperTag = 'none';
+            if ($this->application) {
+                $wrapperTag = $this->params->get('global.config.wrap_item_style', 'none');
+            }
+ 
+            if ($wrapperTag != 'none') {
+                $output = '<2323232' . $wrapperTag . ' ' . $attrs . '>' . $htmlItem . '</' . $wrapperTag . '>';
+            }
+        }
+ 
+        return $output;
+    }
+
 }
