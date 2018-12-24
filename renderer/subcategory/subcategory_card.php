@@ -45,9 +45,9 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
 ?>
     <!-- Category teaser -->
     <!-- file: subcategory_uikit.php -->
-    <div class="el-item uk-card uk-card-default uk-card-small uk-card-hover uk-card-body subcategory-<?php //echo $subcategory->alias; ?>">
+    <div class="el-item uk-card uk-card-secondary uk-card-small uk-card-hover uk-card-body subcategory-<?php //echo $subcategory->alias; ?>">
         
-        <a class="el-link uk-position-cover uk-position-z-index uk-margin-remove-adjacent" href="<?php echo $link; ?>"></a>
+        <!-- <a class="el-link uk-position-cover uk-position-z-index uk-margin-remove-adjacent" href="<?php //echo $link; ?>"></a> -->
 
         <?php if ($vars['params']->get('template.subcategory_teaser_image', 1) && $image['src']) : ?>
             <div class="uk-width-auto@m uk-align-<?php echo $imageAlign; // ВООБЩЕ ЭТО НАДО? ?>">
