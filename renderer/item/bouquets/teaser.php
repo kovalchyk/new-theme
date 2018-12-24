@@ -24,21 +24,21 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
         <div class="uk-card-media-top">
 
             <?php if ($this->checkPosition('image')) : ?>
-                <div class="item-image uk-align-<?php echo $align; ?>">
+                <div class="item-image kuku-align-<?php echo $align; ?>">
                     <?php echo $this->renderPosition('image'); ?>
                 </div>
             <?php endif; ?>
 
         </div>
         <div class="uk-card-body">
-            <div class="el-content uk-margin">
-                <div class="teaser-name">
+            <!-- <div class="el-content uk-margin"> -->
+                <!-- <div class="teaser-name"> -->
 
                     <?php if ($this->checkPosition('title')) : ?>
-                        <h4 class="item-title"><?php echo $this->renderPosition('title'); ?></h4>
+                        <h4 class="uk-h5 uk-margin-remove-adjacent uk-margin-small-bottom"><?php echo $this->renderPosition('title'); ?></h4>
                     <?php endif; ?>
 
-                </div>
+                <!-- </div> -->
                 <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small" uk-grid>
 
                     <?php if ($this->checkPosition('price')) : ?>
@@ -86,7 +86,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
                     </div>
                 </div>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
 </div>
