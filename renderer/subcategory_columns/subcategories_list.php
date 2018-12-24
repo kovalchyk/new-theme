@@ -30,9 +30,9 @@ if ($vars['count']) {
 
                 foreach($vars['objects'] as $v){
                 echo '<div class="kuk-first-column some_class">';
-                    echo '<div class="el-item uk-card uk-card-primary uk-card-small uk-card-hover uk-card-body">';
+                    //echo '<div class="el-item uk-card uk-card-primary uk-card-small uk-card-hover uk-card-body">';
                     print_r($v);
-                    echo '</div>';
+                    //echo '</div>';
                 echo '</div>';
                 }
         echo '</div>';
