@@ -44,7 +44,7 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
 
 ?>
     <!-- Category teaser -->
-    <!-- file: subcategory_uikit.php -->
+    <!-- file: subcategory_card.php -->
     <div class="el-item uk-card uk-card-secondary uk-card-small uk-card-hover uk-card-body subcategory-<?php //echo $subcategory->alias; ?>">
         
         <!-- <a class="el-link uk-position-cover uk-position-z-index uk-margin-remove-adjacent" href="<?php //echo $link; ?>"></a> -->
@@ -54,7 +54,7 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
                 <img
                     src="<?php echo $image['src']; ?>" <?php echo $image['width_height']; ?>
                     alt="<?php echo $subcategory->name; ?>"
-                    title="<?php echo $subcategory->name; ?>"
+                    uk-tooltip title="<?php echo $subcategory->name; ?>"
                     class="el-image"
                 />
             </div>
@@ -64,7 +64,7 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
 
             <h4 class="el-title uk-margin uk-h3">
                 <a href="<?php echo $link; ?>"
-                title="<?php echo $subcategory->name; ?>"><?php echo $subcategory->name; ?></a>
+                uk-tooltip title="<?php echo $subcategory->name; ?>"><?php echo $subcategory->name; ?></a>
                 <?php if ($showCount && $countItems != 0) : ?><span>(<?php echo $countItems; ?>)</span><?php endif; ?>
             </h4>
 
@@ -73,11 +73,11 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
             </div>
 
         </div>        
-
+        
         <?php if (in_array($task, array('category', 'frontpage'))) : ?>
-            <!-- Здесь разметка вроде Фронпейдж -->
+            <!-- Здесь разметка для subcategory item -->
             <?php if ($maxItems != 0 && count($items) > 0) : ?>
-                <div class="subcategory-items clearfix">
+                <div class="subcategory-items">
                     <?php
                     foreach ($items as $item) {
                         echo $this->app->jblayout->renderItem($item, 'subcategory_item');
@@ -87,7 +87,7 @@ $image = $this->app->jbimage->get('category_teaser_image', $params);
             <?php endif; ?>
         <?php endif; ?>
     </div>
-    <!-- end of file: subcategory_uikit.php -->
+    <!-- end of file: subcategory_card.php -->
 
 
 <?php
