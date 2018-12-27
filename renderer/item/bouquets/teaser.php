@@ -19,17 +19,17 @@ defined('_JEXEC') or die('Restricted access');
 $align = $this->app->jbitem->getMediaAlign($item, $layout);
 ?>
 
-<div <?php if ($this->checkPosition('tags')) : ?> data-tag="<?php echo $this->renderPosition('tags'); ?>"<?php endif; ?> class="kuk-first-column">
+<div <?php if ($this->checkPosition('tags')) : ?> data-tag="<?php echo $this->renderPosition('tags'); ?>"<?php endif; ?> class="some-class">
     <div class="el-item uk-card uk-card-primary uk-card-small">
-        <div class="uk-card-media-top">
-
+        
+    <div class="uk-card-media-top">
             <?php if ($this->checkPosition('image')) : ?>
                 <div class="item-image kuku-align-<?php echo $align; ?>">
                     <?php echo $this->renderPosition('image'); ?>
                 </div>
             <?php endif; ?>
-
         </div>
+
         <div class="uk-card-body">
             <!-- <div class="el-content uk-margin"> -->
                 <!-- <div class="teaser-name"> -->
@@ -58,7 +58,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                     </div>
                 </div>
                 <div class="uk-margin-remove-bottom uk-grid-small uk-grid-margin-small" uk-grid>
-                    <div class="uk-width-2-3 uk-first-column">
+                    <div class="uk-width-2-3">
                         <div class="cart-button">
                      
                             <?php if ($this->checkPosition('buttonbuy')) : ?>
