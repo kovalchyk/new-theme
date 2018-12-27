@@ -56,7 +56,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
     </div>
 
     <!-- Блок картинки цены -->
-    <div class="uk-container uk-margin-remove-vertical">
+    <div class="uk-container uk-margin-small">
         <!-- Сетка для картинки и блока цены -->
         <div class="uk-grid-medium" uk-grid>
             <!-- Ячейка картинки и краткой информации -->
