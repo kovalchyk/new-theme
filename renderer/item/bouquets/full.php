@@ -149,7 +149,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
             <!-- Ячейка цены и дополнительной информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
                 <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
-                    <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-grid-collapse" uk-grid>
+                    <div class="uk-margin uk-child-width-1-1 uk-grid-match" uk-grid>
                         <div>
                             <!-- Блок цены -->
                             <div uk-scrollspy-class class="el-item uk-panel">
@@ -394,11 +394,11 @@ $tabsId = $this->app->jbstring->getId('tabs');
             <div class="uk-width-1-1@m uk-grid-item-match">
 
                 <!-- Элемент похожих товаров -->
-                <div class="uk-tile-primary uk-tile uk-tile-small">
-                    <h3 class="uk-heading-line" uk-scrollspy-class><span>Похожие букеты</span></h3>
+                <div class="uk-tile uk-tile-muted uk-tile-small">
+                    <h3 class="uk-heading-line uk-text-center" uk-scrollspy-class><span>Другие похожие букеты</span></h3>
                     <div class="uk-margin uk-text-left" uk-scrollspy-class uk-slider>
                         <div class="uk-position-relative">
-                            <ul class="uk-slider-items uk-grid uk-grid-small uk-grid-divider">
+                            <ul class="uk-slider-items uk-grid uk-grid-small">
                                 <!-- Итем рилэйтед -->
                                 <?php if ($this->checkPosition('related')) : ?>
                                     <?php echo $this->renderPosition('related'); ?>
@@ -421,11 +421,11 @@ $tabsId = $this->app->jbstring->getId('tabs');
             <div class="uk-width-1-1@m uk-grid-item-match">
 
                 <!-- Элемент похожих товаров -->
-                <div class="uk-tile-secondary uk-tile uk-tile-small">
+                <div class="uk-tile uk-tile-secondary uk-tile-small">
                     <h3 class="uk-heading-line" uk-scrollspy-class><span>Еще эелемент похожих</span></h3>
                     <div class="uk-margin uk-text-left" uk-scrollspy-class uk-slider>
                         <div class="uk-position-relative">
-                            <ul class="uk-slider-items uk-grid uk-grid-small uk-grid-divider">
+                            <ul class="uk-slider-items uk-grid uk-grid-small">
                                 <!-- Итем рилэйтед -->
                                 <?php if ($this->checkPosition('upsell')) : ?>
                                     <?php echo $this->renderPosition('upsell'); ?>
