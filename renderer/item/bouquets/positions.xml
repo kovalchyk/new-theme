@@ -34,6 +34,7 @@
         <position name="related">Related items</position>
         <position name="upsell">Upsell (Another related items)</position>
         <position name="crossell">Crossell (Another related items)</position>
+        <position name="hits">Total Hits</position>
     </positions>
 
     <positions layout="teaser">
