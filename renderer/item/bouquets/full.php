@@ -46,7 +46,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             </div>
                             <div class="uk-visible@s uk-float-right">
                                 <!-- Элемент до инфы -->
-                                <div class="">Отзывов и комментариев: <span class="uk-badge">3</span></div>
+                                <div class="">Просмотров товара: <span class="uk-badge"><?php echo $this->renderPosition('hits'); ?></span></div>
                             </div>
                         </div>
                     </div>
@@ -73,8 +73,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
                             <!-- Элемент бейджа -->
                             <?php if ($this->checkPosition('badge')) : ?>
-                                <div class="uk-position-top-left uk-overlay uk-overlay-default">
-
+                                <div class="uk-position-top-left uk-overlay">
                                     <div class="badge-free-delivery">
                                         <?php /*echo $this->renderPosition('badge');*/ ?>
                                         <!-- ВРЕМЕННО -->
@@ -105,43 +104,45 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     </div>
 
                     <!-- Блок под картинкой для рейтинга и поделиться -->
-                    <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
 
-                        <!-- Элемент рейтинга -->
-                        <?php if ($this->checkPosition('rating')) : ?>
-                        <div uk-scrollspy-class class="el-item uk-panel">
-                            <div class="el-content uk-margin">
-                                <div class="uk-text-muted">
-                                    <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
+                            <!-- Элемент рейтинга -->
+                            <?php if ($this->checkPosition('rating')) : ?>
+                            <div uk-scrollspy-class class="el-item uk-panel">
+                                <div class="el-content uk-margin">
+                                    <div class="uk-text-muted">
+                                        <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <?php endif; ?>
+                            <?php endif; ?>
 
-                        <!-- Элемент поделиться -->
-                        <div uk-scrollspy-class class="el-item uk-panel">
-                            <div class="el-content uk-margin">
-                                <div class="uk-text-muted uk-text-center">
-                                    <div class="uk-margin-small">Намекните на подарок</div>
-                                    <!-- uSocial -->
-                                    <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial"
-                                        charset="utf-8"></script>
-                                    <div class="uSocial-Share" data-pid="a06801f02271015b83e83b72ddc1ce5f" data-type="share"
-                                        data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after"
-                                        data-social="vk,fb,ok,twi,pinterest,telegram" data-mobile="vi,wa,sms"></div>
-                                    <!-- /uSocial -->
+                            <!-- Элемент поделиться -->
+                            <div uk-scrollspy-class class="el-item uk-panel">
+                                <div class="el-content uk-margin">
+                                    <div class="uk-text-muted uk-text-center">
+                                        <div class="uk-margin-small">Намекните на подарок</div>
+                                        <!-- uSocial -->
+                                        <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial"
+                                            charset="utf-8"></script>
+                                        <div class="uSocial-Share" data-pid="a06801f02271015b83e83b72ddc1ce5f" data-type="share"
+                                            data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after"
+                                            data-social="vk,fb,ok,twi,pinterest,telegram" data-mobile="vi,wa,sms"></div>
+                                        <!-- /uSocial -->
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
 
+                        <!-- Блок элемента краткого описания -->
+                        <?php //if ($this->checkPosition('shorttext')) : ?>
+                            <div class="short-description">
+                                <?php //echo $this->renderPosition('shorttext'); ?>
+                            </div>
+                        <?php //endif; ?>
                     </div>
-
-                    <!-- Блок элемента краткого описания -->
-                    <?php if ($this->checkPosition('shorttext')) : ?>
-                        <div class="short-description">
-                            <?php echo $this->renderPosition('shorttext'); ?>
-                        </div>
-                    <?php endif; ?>
 
                 </div>
             </div>
@@ -193,7 +194,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
 																<span>Оплата</span>
 																</h3> -->
                                                     <div class="el-content uk-margin">
-                                                        <div class="uk-text-small">
+                                                        <div class="el-item">
                                                             Для удобства совершения покупок в нашем магазине мы
                                                             обеспечиваем возможность оплаты несколькими
                                                             способами: наличными курьеру или в офисе, банковской картой
@@ -207,7 +208,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
 																<span>Доставка</span>
 																</h3> -->
                                                     <div class="el-content uk-margin">
-                                                        <div class="uk-text-small">
+                                                        <div class="el-item">
                                                             <p>При заказе до 5000 руб. стоимость доставки составляет
                                                                 500р.<br />
                                                                 При заказе свыше 5000р. доставка цветов по Москве
@@ -225,8 +226,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                             <div class="uk-first-column">
                                                 <div class="el-item uk-panel">
                                                     <div class="el-content uk-margin">
-                                                        <div class="uk-h6 uk-margin-remove uk-text-truncate">Телефоны
-                                                            для связи:</div>
+                                                        <div class="uk-h6 uk-margin-remove">Телефоны для связи:</div>
                                                         <div class="">
                                                             <p class="uk-text-small uk-margin-remove-bottom">
                                                                 <a href="tel:+79999676370">☎ 999 967-63-70</a>
@@ -242,10 +242,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                             <div>
                                                 <div class="el-item uk-panel">
                                                     <div class="el-content uk-margin">
-                                                        <div class="uk-h6 uk-margin-remove uk-text-truncate">Оплата
-                                                            заказов</div>
+                                                        <div class="uk-h6 uk-margin-remove">Оплата заказов</div>
                                                         <div class="">
-                                                            <div class="uk-text-small uk-margin-remove-bottom">
+                                                            <div class="uk-margin-remove-bottom">
                                                                 <p>Бесплатная доставка заказов от 5000 рублей,
                                                                     остальные 500 рублей.</p>
                                                             </div>
@@ -270,13 +269,13 @@ $tabsId = $this->app->jbstring->getId('tabs');
             <div class="uk-width-1-1@m uk-grid-item-match">
                 <div class="uk-tile-muted uk-tile uk-tile-small">
 
-                    <h3 class="uk-text-center uk-heading-line" uk-scrollspy-class>
+                    <!-- <h3 class="uk-text-center uk-heading-line" uk-scrollspy-class>
                         <span>Детально о букете</span>
-                    </h3>
+                    </h3> -->
 
                     <div class="uk-margin" uk-scrollspy-class>
                         <!-- Табы свитчера -->
-                        <ul uk-switcher="connect: #js-952;animation: uk-animation-fade" class="uk-margin uk-subnav el-nav">
+                        <ul uk-switcher="connect: #js-952;animation: uk-animation-fade" class="uk-margin uk-subnav el-nav uk-flex-center">
                             <?php if ($this->checkPosition('properties')) : ?>
                                 <li>
                                     <a href="#properties">
@@ -322,15 +321,15 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                     <!-- Элемент списка характеристик товара -->
                                     <div class="el-content uk-margin">
                                         <div class="uk-grid-margin uk-grid-divider" uk-grid>
-                                            <div class="uk-width-expand@m uk-first-column">
-                                                <div class="uk-margin uk-text-small">
-                                                    <ul class="uk-list uk-list-divider">
-                                                        <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
-                                                    </ul>
-                                                </div>
+                                            
+                                            <!-- Блок элемента краткого описания -->
+                                            <div class="uk-width-expand@m short-description">
+                                                <span class="uk-text-large">Краткое описание товара</span>
+                                                <?php echo $this->renderPosition('shorttext'); ?>
                                             </div>
-                                            <!-- Блок элемента значков -->
-                                            <div class="uk-width-expand@m">
+                                            
+                                             <!-- Блок элемента значков -->
+                                             <!-- <div class="uk-width-expand@m">
                                                 <div class="uk-margin uk-display-inline">
                                                     <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
                                                 </div>
@@ -340,7 +339,17 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                 <div class="uk-margin uk-display-inline">
                                                     <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
                                                 </div>
+                                            </div> -->
+                                           
+                                            <!-- Блок списка параметров -->
+                                            <div class="uk-width-expand@m">
+                                                <div class="uk-margin uk-text-small">
+                                                    <ul class="uk-list uk-list-divider">
+                                                        <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
+                                                    </ul>
+                                                </div>
                                             </div>
+                                            
                                         </div>
                                     </div>
                                 </li>
