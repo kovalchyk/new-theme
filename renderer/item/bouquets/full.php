@@ -26,7 +26,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
     <div class="uk-container uk-margin-remove-vertical">
         <div class="uk-grid-collapse" uk-grid>
             <div class="uk-width-1-1@m uk-grid-item-match">
-                <div class="uk-tile-default uk-tile uk-tile-small">
+                <div class="-uk-tile-default -uk-tile -uk-tile-small">
                     <!-- Элемент заголовка -->
                     <?php if ($this->checkPosition('title')) : ?>
                         <h1 class="uk-text-center uk-heading-primary uk-heading-line" uk-scrollspy-class>
@@ -58,17 +58,51 @@ $tabsId = $this->app->jbstring->getId('tabs');
     <!-- Блок картинки цены -->
     <div class="uk-container uk-margin-remove-vertical">
         <!-- Сетка для картинки и блока цены -->
-        <div class="uk-grid-collapse" uk-grid>
+        <div class="uk-grid-medium" uk-grid>
             <!-- Ячейка картинки и краткой информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
-                <div class="uk-tile-default uk-tile uk-tile-xsmall">
+                <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
 
-                    <!-- Блок элемента картинки -->
-                    <?php if ($this->checkPosition('image')) : ?>
-                        <div class="uk-margin" uk-scrollspy-class>
-                            <?php echo $this->renderPosition('image'); ?>
+                    <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
+                            <!-- Блок элемента картинки -->
+                            <?php if ($this->checkPosition('image')) : ?>
+                                <div class="uk-margin-remove" uk-scrollspy-class>
+                                    <?php echo $this->renderPosition('image'); ?>
+                                </div>      
+                            <?php endif; ?>
+
+                            <!-- Элемент бейджа -->
+                            <?php if ($this->checkPosition('badge')) : ?>
+                                <div class="uk-position-top-left uk-overlay uk-overlay-default">
+
+                                    <div class="badge-free-delivery">
+                                        <?php /*echo $this->renderPosition('badge');*/ ?>
+                                        <!-- ВРЕМЕННО -->
+                                        <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
+                                    </div>
+                                </div>
+                            <?php endif; ?>                                               
+                       
+                            <!-- Элемент кнопки Избранное -->
+                            <?php if ($this->checkPosition('favourite')) : ?>
+                                <div class="uk-position-top-right uk-overlay uk-overlay-default"> 
+                                    <div class="button-favourite">
+                                        <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                        <!-- <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
+                        <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>                        
+                        <div class="uk-position-center uk-overlay uk-overlay-default">Centner</div>
+                        <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
+                        <div class="uk-position-bottom-left uk-overlay uk-overlay-default">Bottom Left</div>
+                        <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
+                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div> -->
+                        <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-primary">
+                            <p>Хэллоуин – праздник очень древний и до недавнего времени его отмечали лишь в Америке. Но сегодня торжество, сопровождаемое переодеванием и весельем, широко празднуется во всех странах мира. И, конечно же, оно немыслимо без обязательного атрибута – большой тыквы с симпатичной рожицей. Оригинальная композиция «Графиня Дракула» поможет организовать веселый карнавал и наполнить атмосферу духом таинственности и волшебства.</p>
                         </div>
-                    <?php endif; ?>
+
+                    </div>
 
                     <!-- Блок под картинкой для рейтинга и поделиться -->
                     <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
@@ -77,7 +111,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <?php if ($this->checkPosition('rating')) : ?>
                         <div uk-scrollspy-class class="el-item uk-panel">
                             <div class="el-content uk-margin">
-                                <div class="uk-text-center">
+                                <div class="uk-text-muted">
                                     <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
                                 </div>
                             </div>
@@ -87,8 +121,8 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <!-- Элемент поделиться -->
                         <div uk-scrollspy-class class="el-item uk-panel">
                             <div class="el-content uk-margin">
-                                <div class="uk-text-center">
-                                    <div class="uk-margin-small uk-text-large">Намекните на подарок</div>
+                                <div class="uk-text-muted uk-text-center">
+                                    <div class="uk-margin-small">Намекните на подарок</div>
                                     <!-- uSocial -->
                                     <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial"
                                         charset="utf-8"></script>
@@ -102,27 +136,6 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
                     </div>
 
-                    <!-- Блок под картинкой для элементов бейджа и кнопки Избранное -->
-                    <div class="">
-                        <!-- Элемент бейджа -->
-                        <?php if ($this->checkPosition('badge')) : ?>
-                            <div class="badge-free-delivery uk-position-absolute">
-                                <?php /*echo $this->renderPosition('badge');*/ ?>
-                                <!-- ВРЕМЕННО -->
-                                <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
-                            </div>
-                        <?php endif; ?>
-
-                        <!-- Элемент кнопки Избранное -->
-
-                        <?php if ($this->checkPosition('favourite')) : ?>
-                            <div class="button-favourite uk-position-absolute">
-                                <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
-                            </div>
-                        <?php endif; ?>
-                        <!-- конец -->
-                    </div>
-
                     <!-- Блок элемента краткого описания -->
                     <?php if ($this->checkPosition('shorttext')) : ?>
                         <div class="short-description">
@@ -134,7 +147,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
             </div>
             <!-- Ячейка цены и дополнительной информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
-                <div class="uk-tile-default uk-tile uk-tile-xsmall">
+                <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
                     <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-grid-collapse" uk-grid>
                         <div>
                             <!-- Блок цены -->

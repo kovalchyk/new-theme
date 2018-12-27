@@ -19,7 +19,7 @@ $id = $this->identifier.'-'.uniqid();
 <div id="<?php echo $id; ?>" class="yoo-zoo rating">
 
 	<?php if ($show_message) : ?>
-	<div class="vote-message uk-margin-small uk-text-large">
+	<div class="vote-message uk-margin-small">
 		<?php echo $rating.'/<strong>'.$stars.'</strong> '.JText::sprintf($votes == 1 ? 'rating %s vote' : 'rating %s votes', $votes); ?>
 	</div>
 	<?php endif; ?>
