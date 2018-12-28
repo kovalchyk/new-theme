@@ -64,32 +64,32 @@ $tabsId = $this->app->jbstring->getId('tabs');
                 <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
 
                     <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
-                            <!-- Блок элемента картинки -->
-                            <?php if ($this->checkPosition('image')) : ?>
-                                <div class="uk-margin-remove" uk-scrollspy-class>
-                                    <?php echo $this->renderPosition('image'); ?>
-                                </div>      
-                            <?php endif; ?>
+                        <!-- Блок элемента картинки -->
+                        <?php if ($this->checkPosition('image')) : ?>
+                        <div class="uk-margin-remove" uk-scrollspy-class>
+                            <?php echo $this->renderPosition('image'); ?>
+                        </div>
+                        <?php endif; ?>
 
-                            <!-- Элемент бейджа -->
-                            <?php if ($this->checkPosition('badge')) : ?>
-                                <div class="uk-position-top-left uk-overlay">
-                                    <div class="badge-free-delivery">
-                                        <?php /*echo $this->renderPosition('badge');*/ ?>
-                                        <!-- ВРЕМЕННО -->
-                                        <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
-                                    </div>
-                                </div>
-                            <?php endif; ?>                                               
-                       
-                            <!-- Элемент кнопки Избранное -->
-                            <?php if ($this->checkPosition('favourite')) : ?>
-                                <div class="uk-position-top-right uk-overlay uk-overlay-default"> 
-                                    <div class="button-favourite">
-                                        <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
-                                    </div>
-                                </div>
-                            <?php endif; ?>
+                        <!-- Элемент бейджа -->
+                        <?php if ($this->checkPosition('badge')) : ?>
+                        <div class="uk-position-top-left uk-overlay">
+                            <div class="badge-free-delivery">
+                                <?php /*echo $this->renderPosition('badge');*/ ?>
+                                <!-- ВРЕМЕННО -->
+                                <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
+                            </div>
+                        </div>
+                        <?php endif; ?>                                               
+                    
+                        <!-- Элемент кнопки Избранное -->
+                        <?php if ($this->checkPosition('favourite')) : ?>
+                        <div class="uk-position-top-right uk-overlay uk-overlay-default"> 
+                            <div class="button-favourite">
+                                <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
+                            </div>
+                        </div>
+                        <?php endif; ?>
                         <!-- <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
                         <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>                        
                         <div class="uk-position-center uk-overlay uk-overlay-default">Centner</div>
@@ -195,11 +195,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
 																</h3> -->
                                                     <div class="el-content uk-margin">
                                                         <div class="el-item">
-                                                            Для удобства совершения покупок в нашем магазине мы
-                                                            обеспечиваем возможность оплаты несколькими
+                                                            Для удобства совершения покупок в нашем магазине мы обеспечиваем возможность оплаты несколькими
                                                             способами: наличными курьеру или в офисе, банковской картой
-                                                            или с помощью электронной валюты
-                                                            Webmoney.
+                                                            или с помощью электронной валюты Webmoney.
                                                         </div>
                                                     </div>
                                                 </li>
@@ -209,12 +207,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
 																</h3> -->
                                                     <div class="el-content uk-margin">
                                                         <div class="el-item">
-                                                            <p>При заказе до 5000 руб. стоимость доставки составляет
-                                                                500р.<br />
-                                                                При заказе свыше 5000р. доставка цветов по Москве
-                                                                бесплатная.<br />
-                                                                Доставка цветов по Москве работает ежедневно с 10:00 -
-                                                                22:00
+                                                            <p>При заказе до 5000 руб. стоимость доставки составляет 500р.<br />
+                                                                При заказе свыше 5000р. доставка цветов по Москве бесплатная.<br />
+                                                                Доставка цветов по Москве работает ежедневно с 10:00 - 22:00
                                                             </p>
                                                         </div>
                                                     </div>
@@ -230,9 +225,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                         <div class="">
                                                             <p class="uk-text-small uk-margin-remove-bottom">
                                                                 <a href="tel:+79999676370">☎ 999 967-63-70</a>
-                                                                <br>
+                                                                <br />
                                                                 <a href="tel:+79647213136">☎ 964 721-31-36</a>
-                                                                <br>
+                                                                <br />
                                                                 <a href="tel:+79647213136">☎ 964 721-31-36</a>
                                                             </p>
                                                         </div>
@@ -415,30 +410,16 @@ $tabsId = $this->app->jbstring->getId('tabs');
             </div>
         </div>
     </div>
-    <!-- Контейнер еще одних похожих букетов -->
+    <!-- Контейнер для модуля/модулей -->
     <div class="uk-container uk-margin-remove-vertical">
         <div uk-grid>
             <div class="uk-width-1-1@m uk-grid-item-match">
 
-                <!-- Элемент похожих товаров -->
-                <div class="uk-tile uk-tile-secondary uk-tile-small">
-                    <h3 class="uk-heading-line" uk-scrollspy-class><span>Еще эелемент похожих</span></h3>
-                    <div class="uk-margin uk-text-left" uk-scrollspy-class uk-slider>
-                        <div class="uk-position-relative">
-                            <ul class="uk-slider-items uk-grid uk-grid-small">
-                                <!-- Итем рилэйтед -->
-                                <?php if ($this->checkPosition('upsell')) : ?>
-                                    <?php echo $this->renderPosition('upsell'); ?>
-                                <?php endif; ?>
-                            </ul>
-                            <div>
-                                <a class="el-slidenav uk-position-medium uk-slidenav-large uk-position-center-left" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
-                                <a class="el-slidenav uk-position-medium uk-slidenav-large uk-position-center-right" href="#" uk-slidenav-next uk-slider-item="next"></a>
-                            </div>
-                        </div>
-                        <ul class="el-nav uk-slider-nav uk-dotnav uk-flex-center uk-margin-top uk-visible@s" uk-margin></ul>
-                    </div>
-                </div>
+                <!-- Модуль -->
+                <?php if ($this->checkPosition('jmodule')) : ?>
+                    <?php echo $this->renderPosition('jmodule'); ?>
+                <?php endif; ?>
+                
             </div>
         </div>
     </div>
