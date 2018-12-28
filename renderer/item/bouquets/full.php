@@ -411,17 +411,10 @@ $tabsId = $this->app->jbstring->getId('tabs');
         </div>
     </div>
     <!-- Контейнер для модуля/модулей -->
-    <div class="uk-container uk-margin-remove-vertical">
-        <div uk-grid>
-            <div class="uk-width-1-1@m uk-grid-item-match">
 
-                <!-- Модуль -->
-                <?php if ($this->checkPosition('jmodule')) : ?>
-                    <?php echo $this->renderPosition('jmodule'); ?>
-                <?php endif; ?>
-                
-            </div>
-        </div>
-    </div>
+        <!-- Модуль -->
+        <?php if ($this->checkPosition('jmodule')) : ?>
+            <?php echo $this->renderPosition('jmodule'); ?>
+        <?php endif; ?>
     <!-- Next Section for impressive functionality )) -->
 </div>
