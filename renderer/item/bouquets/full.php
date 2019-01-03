@@ -75,7 +75,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <?php if ($this->checkPosition('badge')) : ?>
                         <div class="uk-position-top-left uk-overlay">
                             <div class="badge-free-delivery">
-                                <?php /*echo $this->renderPosition('badge');*/ ?>
+                                <?php //echo $this->renderPosition('badge'); ?>
                                 <!-- ВРЕМЕННО -->
                                 <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
                             </div>
