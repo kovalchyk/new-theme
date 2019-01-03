@@ -1,0 +1,40 @@
+/* Copyright (C) YOOtheme GmbH, http://www.gnu.org/licenses/gpl.html GNU/GPL */
+
+/*
+ * rating
+ */
+
+/*.yoo-zoo.rating { font-size: 12px; }*/
+
+.yoo-zoo.rating div.rating-container {
+	position: relative;
+	height: 28px;
+	background: url(../images/rating.png) 0 0 repeat-x;
+	overflow: hidden;
+}
+
+.yoo-zoo.rating div.previous-rating {
+	height: 28px;
+	background: url(../images/rating.png) 0 -28px repeat-x;
+}
+
+.yoo-zoo.rating div.current-rating div {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 28px;
+	cursor: pointer;
+}
+
+.yoo-zoo.rating div.current-rating div.hover { background: url(../images/rating.png) 0 -56px repeat-x; }
+
+.yoo-zoo.rating div.star1 { width: 28px; }
+.yoo-zoo.rating div.star2 { width: 56px; }
+.yoo-zoo.rating div.star3 { width: 84px; }
+.yoo-zoo.rating div.star4 { width: 112px; }
+.yoo-zoo.rating div.star5 { width: 140px; }
+.yoo-zoo.rating div.star6 { width: 168px; }
+.yoo-zoo.rating div.star7 { width: 196px; }
+.yoo-zoo.rating div.star8 { width: 224px; }
+.yoo-zoo.rating div.star9 { width: 252px; }
+.yoo-zoo.rating div.star10 { width: 280px; }

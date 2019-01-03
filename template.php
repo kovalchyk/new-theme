@@ -67,5 +67,4 @@ class JBTemplateUikit extends JBTemplate
 
         return $attrs;
     }
-
 }

@@ -16,9 +16,3 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-?>
-
-<span class="jsRemoveFromCart jsRemoveElement uk-button uk-button-danger uk-button-small jbprice-buttons-remove">
-    <span uk-icon="icon: trash"></span>
-    <?php echo JText::_($params->get('remove_label', 'JBZOO_ELEMENT_PRICE_BUTTONS_REMOVE_LABEL_DEFAULT')); ?>
-</span>

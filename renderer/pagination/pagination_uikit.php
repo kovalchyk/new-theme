@@ -16,9 +16,18 @@
 // no direct access
 defined('_JEXEC') or die('Restricted access');
 
-?>
+$url        = $vars['link'];
+$pagination = $vars['object'];
 
-<span class="jsRemoveFromCart jsRemoveElement uk-button uk-button-danger uk-button-small jbprice-buttons-remove">
-    <span uk-icon="icon: trash"></span>
-    <?php echo JText::_($params->get('remove_label', 'JBZOO_ELEMENT_PRICE_BUTTONS_REMOVE_LABEL_DEFAULT')); ?>
-</span>
+$this->app->jbdebug->mark('layout::pagination::start');
+
+if (!$pagination->getShowAll()) : ?>
+    <!-- file: pagination_uikit.php -->
+
+    <ul class="uk-pagination">
+        <?php echo $this->app->jbuikit->paginate($pagination, $url); ?>
+    </ul>
+
+    <!-- end of file: pagination_uikit.php -->
+<?php endif;
+$this->app->jbdebug->mark('layout::pagination::finish');

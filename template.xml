@@ -12,14 +12,14 @@
     @link       https://github.com/JBZoo/JBZoo
 -->
 <template>
-    <name>UIkit (Yootheme)</name>
-    <description>JBZoo uikit template</description>
-    <author>JBZoo.com</author>
-    <creationDate>2014 06</creationDate>
-    <copyright>Copyright (C) JBZoo.com, All rights reserved.</copyright>
+    <name>UIkit v3 Default</name>
+    <description>JBZoo UIkit v3.0 template</description>
+    <author>promoweb.biz</author>
+    <creationDate>2018 09</creationDate>
+    <copyright>Copyright (C) promoweb.biz, All rights reserved.</copyright>
     <authorEmail>admin@jbzoo.com</authorEmail>
-    <authorUrl>http://jbzoo.com</authorUrl>
-    <version>1.0</version>
+    <authorUrl>https://promoweb.biz</authorUrl>
+    <version>0.0.0a</version>
 
     <params group="category">
         <param name="show_alpha_index" type="jbbool" default="0" label="JBZOO_SHOW_ALPHA_INDEX"/>
