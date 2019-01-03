@@ -96,10 +96,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
                         <div class="uk-position-bottom-left uk-overlay uk-overlay-default">Bottom Left</div>
                         <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
-                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div> -->
+                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div> 
                         <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-primary">
-                            <p>Хэллоуин – праздник очень древний и до недавнего времени его отмечали лишь в Америке. Но сегодня торжество, сопровождаемое переодеванием и весельем, широко празднуется во всех странах мира. И, конечно же, оно немыслимо без обязательного атрибута – большой тыквы с симпатичной рожицей. Оригинальная композиция «Графиня Дракула» поможет организовать веселый карнавал и наполнить атмосферу духом таинственности и волшебства.</p>
-                        </div>
+                        </div> -->
 
                     </div>
 
