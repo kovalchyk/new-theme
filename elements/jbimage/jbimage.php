@@ -107,6 +107,7 @@ class ElementJBImage extends ElementRepeatable implements iRepeatSubmittable
         $height = (int)$params->get('height', 0);
         $alt    = $title = empty($title) ? $this->getItem()->name : $title;
         $url    = $imagePopup = $appendClass = $target = $rel = '';
+
         $imgClass = 'jbimage el-image uk-box-shadow-small uk-box-shadow-hover-medium';
 
         // get image
@@ -124,17 +125,20 @@ class ElementJBImage extends ElementRepeatable implements iRepeatSubmittable
             $rel    = $this->get('rel');
             $target = (int)$this->get('target') ? '_blank' : false;
             $appendClass = ' el-link';
+
         } elseif ($template == 'itemlink') {
             if ($this->getItem()->getState()) {
                 $url   = $this->app->jbrouter->externalItem($this->_item);
                 $title = empty($title) ? $this->getItem()->name : $title;
             }
 
+
             $appendClass = ' el-link';
 
         } elseif ($template == 'popup') {
 
             $appendClass = 'jbimage-gallery el-link';
+
             if ((int)$params->get('group_popup', 1)) {
                 $rel = 'jbimage-gallery-' . $this->getItem()->id;
             }
@@ -165,7 +169,7 @@ class ElementJBImage extends ElementRepeatable implements iRepeatSubmittable
                     'imageAttrs' => $this->_buildAttrs(array(
                             'class'         => $imgClass . ' ' . $unique,
                             'alt'           => $alt,
-                            'uk-tooltip title'         => $title,
+                            'title'         => $title,
                             'src'           => $image->url,
                             'width'         => $image->width,
                             'height'        => $image->height,

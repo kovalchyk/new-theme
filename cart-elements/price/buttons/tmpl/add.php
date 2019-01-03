@@ -18,6 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 
 ?>
 
+
 <span class="jsAddToCart uk-button uk-button-primary jbprice-buttons-add">
     <span uk-icon="icon: cart"></span>
     <?php echo JText::_($params->get('add_label', 'JBZOO_ELEMENT_PRICE_BUTTONS_ADD_LABEL_DEFAULT')); ?>

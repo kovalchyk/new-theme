@@ -40,7 +40,6 @@ $wrapAttrs = array(
             <span uk-icon="icon: trash"></span>
         </span>
     </div>
-
     <div class="jbfavorite-unactive">
         <span class="uk-icon-button jsFavoriteToggle" uk-tooltip title="<?php echo JText::_('JBZOO_FAVORITE_ADD'); ?>">
             <span uk-icon="icon: heart"></span>
