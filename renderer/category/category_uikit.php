@@ -26,27 +26,37 @@ $image    = $this->app->jbimage->get('category_image', $vars['params']);
 $title    = $title ? $title : $category->name;
 
 if ((int)$vars['params']->get('template.category_show', 1)) : ?>
+    
     <!-- file: category_uikit.php -->
 
-    <!-- 
-    <div class="uk-section-muted uk-section">
-    <div class="uk-container">
-     -->
-    <div class="uk-grid-margin uk-grid-stack category-<?php echo $category->alias; ?>" uk-grid> <!-- Надо ли здесь сетка? -->
+    <script type="text/javascript">
+    jQuery(function($) {
+        $('.readmore').on('click', function () {
+        $('.category-description').toggleClass('-expanded');
 
+        if ($('.category-description').hasClass('-expanded')) {
+            $('.readmore').html('<span uk-icon="icon: chevron-up;ratio:2"></span>');
+        } else {
+            $('.readmore').html('<span uk-icon="icon: chevron-down;ratio:2"></span>');
+        }
+        });
+    });
+    </script>
+
+    <div class="uk-grid-margin uk-grid-stack category-<?php echo $category->alias; ?>" uk-grid> <!-- Надо ли здесь сетка? -->
         <div class="uk-width-1-1@m uk-first-column">
             <!-- start category description -->
-            <div class="category-description">
+            <div class="category-description222">
                 <!-- Заголовок -->
                 <?php if ((int)$vars['params']->get('template.category_title_show', 1)) : ?>
-                    <h1 class="uk-heading-primary uk-heading-line">
+                    <h1 class="uk-heading-primary uk-heading-line uk-margin-small">
                         <span><?php echo $title; ?></span>
                     </h1>
                 <?php endif; ?>  
 
                 <!-- Подзаголовок -->
                 <?php if ((int)$vars['params']->get('template.category_subtitle', 1) && !empty($subTitle)) : ?>
-                    <h2 class="uk-h2"><?php echo $subTitle; ?></h2>
+                    <h2 class="uk-h2 uk-margin-small"><?php echo $subTitle; ?></h2>
                 <?php endif; ?>
 
                 <!-- Картинка категории -->
@@ -67,17 +77,25 @@ if ((int)$vars['params']->get('template.category_show', 1)) : ?>
                 <!-- <div class="uk-divider-icon"></div> -->
                 <!-- Текст описание категории -->
                 <?php if ((int)$vars['params']->get('template.category_text', 1) && $category->description) : ?>
-                    <div class="description-full">
+                    <div class="category-description description-full2">
                         <?php echo $category->getText($category->description); ?>
                     </div>
                 <?php endif; ?>
 
+                <div class="uk-margin-small">
+                    <button class="uk-button uk-button-link readmore uk-align-center">
+                        <span uk-icon="icon: chevron-down;ratio:2"></span>
+                    </button>
+                </div>
+
                 <?php echo JBZOO_CLR; ?>
             <!-- stop category description -->
             </div>
+
         </div>
     <!-- End of grid -->
     </div>
+
     <!-- end of file: category_uikit.php -->
 
 <?php else: ?>
