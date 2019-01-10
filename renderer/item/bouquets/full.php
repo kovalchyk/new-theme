@@ -118,7 +118,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             <?php endif; ?>
 
                             <!-- Элемент поделиться -->
-                            <div uk-scrollspy-class class="el-item uk-panel uk-visible@s">
+                            <div uk-scrollspy-class class="el-item uk-panel uk-visible@l">
                                 <div class="el-content uk-margin">
                                     <div class="uk-text-muted uk-text-center">
                                         <div class="uk-margin-small">Намекните на подарок</div>
