@@ -77,7 +77,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             <div class="badge-free-delivery">
                                 <?php //echo $this->renderPosition('badge'); ?>
                                 <!-- ВРЕМЕННО -->
-                                <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
+                                <!-- <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве"> -->
                             </div>
                         </div>
                         <?php endif; ?>                                               
@@ -118,7 +118,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             <?php endif; ?>
 
                             <!-- Элемент поделиться -->
-                            <div uk-scrollspy-class class="el-item uk-panel">
+                            <div uk-scrollspy-class class="el-item uk-panel uk-visible@s">
                                 <div class="el-content uk-margin">
                                     <div class="uk-text-muted uk-text-center">
                                         <div class="uk-margin-small">Намекните на подарок</div>
