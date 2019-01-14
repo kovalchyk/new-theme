@@ -75,9 +75,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <?php if ($this->checkPosition('badge')) : ?>
                         <div class="uk-position-top-left uk-overlay">
                             <div class="badge-free-delivery">
-                                <?php /*echo $this->renderPosition('badge');*/ ?>
+                                <?php //echo $this->renderPosition('badge'); ?>
                                 <!-- ВРЕМЕННО -->
-                                <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве">
+                                <!-- <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве"> -->
                             </div>
                         </div>
                         <?php endif; ?>                                               
@@ -96,20 +96,20 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
                         <div class="uk-position-bottom-left uk-overlay uk-overlay-default">Bottom Left</div>
                         <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
-                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div>
+                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div> 
                         <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-primary">
                         </div> -->
 
                     </div>
 
                     <!-- Блок под картинкой для рейтинга и поделиться -->
-                    <div class="uk-card uk-card-default uk-card-body">
-                        <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
+                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
+                        <div class="uk-margin-small uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
 
                             <!-- Элемент рейтинга -->
                             <?php if ($this->checkPosition('rating')) : ?>
                             <div uk-scrollspy-class class="el-item uk-panel">
-                                <div class="el-content uk-margin">
+                                <div class="el-content">
                                     <div class="uk-text-muted">
                                         <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
                                     </div>
@@ -118,8 +118,8 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             <?php endif; ?>
 
                             <!-- Элемент поделиться -->
-                            <div uk-scrollspy-class class="el-item uk-panel">
-                                <div class="el-content uk-margin">
+                            <div uk-scrollspy-class class="el-item uk-panel uk-visible@l">
+                                <div class="el-content">
                                     <div class="uk-text-muted uk-text-center">
                                         <div class="uk-margin-small">Намекните на подарок</div>
                                         <!-- uSocial -->
