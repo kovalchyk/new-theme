@@ -103,13 +103,13 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     </div>
 
                     <!-- Блок под картинкой для рейтинга и поделиться -->
-                    <div class="uk-card uk-card-default uk-card-body">
-                        <div class="uk-margin uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
+                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
+                        <div class="uk-margin-small uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
 
                             <!-- Элемент рейтинга -->
                             <?php if ($this->checkPosition('rating')) : ?>
                             <div uk-scrollspy-class class="el-item uk-panel">
-                                <div class="el-content uk-margin">
+                                <div class="el-content">
                                     <div class="uk-text-muted">
                                         <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
                                     </div>
@@ -119,7 +119,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
                             <!-- Элемент поделиться -->
                             <div uk-scrollspy-class class="el-item uk-panel uk-visible@l">
-                                <div class="el-content uk-margin">
+                                <div class="el-content">
                                     <div class="uk-text-muted uk-text-center">
                                         <div class="uk-margin-small">Намекните на подарок</div>
                                         <!-- uSocial -->
