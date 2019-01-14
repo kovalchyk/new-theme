@@ -43,7 +43,7 @@ if ((int)$vars['params']->get('template.category_show', 1)) : ?>
     });
     </script>
 
-    <div class="uk-grid-margin uk-grid-stack category-<?php echo $category->alias; ?>" uk-grid> <!-- Надо ли здесь сетка? -->
+    <div class="uk-grid-small uk-grid-stack category-<?php echo $category->alias; ?>" uk-grid> <!-- Надо ли здесь сетка? -->
         <div class="uk-width-1-1@m uk-first-column">
             <!-- start category description -->
             <div class="category-description222">
@@ -82,7 +82,7 @@ if ((int)$vars['params']->get('template.category_show', 1)) : ?>
                     </div>
                 <?php endif; ?>
 
-                <div class="uk-margin-small">
+                <div class="uk-margin-remove">
                     <button class="uk-button uk-button-link readmore uk-align-center">
                         <span uk-icon="icon: chevron-down;ratio:2"></span>
                     </button>
