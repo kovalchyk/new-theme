@@ -30,7 +30,7 @@ $childComments = $comment->getChildren();
 $vars['author']->name = $vars['author']->name ? $vars['author']->name : JText::_('Anonymous');
 
 ?>
-    <li>
+    <li class="uk-margin-medium">
         <article id="comment-<?php echo $comment->id; ?>" class="uk-comment uk-comment-primary comment <?php if ($author->isJoomlaAdmin()) { echo 'uk-comment-primary'; } ?> uk-visible-toggle" tabindex="-1">
             <header class="uk-comment-header uk-position-relative">
                 <div class="uk-grid-medium uk-flex-middle" uk-grid>
@@ -85,22 +85,26 @@ $vars['author']->name = $vars['author']->name ? $vars['author']->name : JText::_
 
                         <?php endif; ?>
 
-                        <?php if ($comment->state != Comment::STATE_APPROVED) : ?>
-                            <div class="uk-alert">
-                                <i class="uk-icon-refresh uk-icon-spin"></i>
-                                <?php echo JText::_('COMMENT_AWAITING_MODERATION'); ?>
-                            </div>
-                        <?php endif; ?>
+
                 </div>
 
             </header>
             <div class="uk-comment-body content"><?php echo $this->app->comment->filterContentOutput($comment->content); ?></div>
+
+            <?php if ($comment->state != Comment::STATE_APPROVED) : ?>
+                <div class="uk-alert-warning uk-margin-remove-bottom" uk-alert>
+                    <span class="uk-margin-small-right" uk-spinner="ratio: 1"></span>
+                    <?php echo JText::_('COMMENT_AWAITING_MODERATION'); ?>
+                    <a class="uk-alert-close" uk-close></a>
+                </div>
+            <?php endif; ?>    
+
         </article>
 
 
 
         <?php if (count($childComments)) : ?>
-            <ul class="level<?php echo ++$level; ?>">
+            <ul class="level<?php echo ++$level; ?> uk-margin-medium">
                 <?php
                 foreach ($childComments as $comment) {
                     echo $this->app->jblayout->render('comment', $vars['comment'], array(
