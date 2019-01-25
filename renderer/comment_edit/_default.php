@@ -24,7 +24,7 @@ defined('_JEXEC') or die('Restricted access');
     <form class="style short uk-form" method="post" action="<?php echo $this->app->link(array('controller' => 'comment', 'task' => 'edit')); ?>">
 
         <div class="content uk-form-row">
-            <textarea name="content" rows="5" cols="80"></textarea>
+            <textarea name="content" class="uk-textarea" rows="5" placeholder="Textarea"></textarea>
         </div>
 
         <div class="actions uk-form-row">

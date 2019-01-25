@@ -31,74 +31,73 @@ $vars['author']->name = $vars['author']->name ? $vars['author']->name : JText::_
 
 ?>
     <li>
-        <div id="comment-<?php echo $comment->id; ?>" class="uk-comment comment <?php if ($author->isJoomlaAdmin()) {
-            echo 'comment-byadmin';
-        } ?>">
-
-            <div class="comment-head uk-comment-header">
-                <!--noindex-->
-                <?php if ($params->get('avatar', 0)) : ?>
-                    <div class="avatar uk-comment-avatar"><?php echo $author->getAvatar(50); ?></div>
-                <?php endif; ?>
-
-                <?php if ($author->url) : ?>
-                    <h3 class="author uk-comment-title">
-                        <a href="<?php echo JRoute::_($author->url); ?>" title="<?php echo $author->url; ?>"
-                           rel="nofollow"><?php echo $author->name; ?></a>
-                    </h3>
-                <?php else: ?>
-                    <h3 class="author uk-comment-title"><?php echo $author->name; ?></h3>
-                <?php endif; ?>
-
-                <div class="meta uk-comment-meta">
-                    <?php echo $this->app->html->_('date', $comment->created, $this->app->date->format(JText::_('DATE_FORMAT_COMMENTS')), $this->app->date->getOffset()); ?>
-                    | <a class="permalink" href="#comment-<?php echo $comment->id; ?>" rel="nofollow">#</a>
+        <article id="comment-<?php echo $comment->id; ?>" class="uk-comment uk-comment-primary comment <?php if ($author->isJoomlaAdmin()) { echo 'uk-comment-primary'; } ?> uk-visible-toggle" tabindex="-1">
+            <header class="uk-comment-header uk-position-relative">
+                <div class="uk-grid-medium uk-flex-middle" uk-grid>
+                    <div class="uk-width-auto">
+                        <?php if ($params->get('avatar', 0)) : ?>
+                            <?php echo $author->getAvatar(50); ?>
+                        <?php endif; ?>                   
+                    </div>
+                    <div class="uk-width-expand">
+                        <?php if ($author->url) : ?>
+                            <h4 class="uk-comment-title uk-margin-remove">
+                                <a href="<?php echo JRoute::_($author->url); ?>" class="uk-link-reset" title="<?php echo $author->url; ?>" rel="nofollow"><?php echo $author->name; ?></a>
+                            </h4>
+                        <?php else: ?>
+                            <h4 class="uk-comment-title uk-margin-remove"><?php echo $author->name; ?></h4>
+                        <?php endif; ?>
+                        <p class="uk-comment-meta uk-margin-remove-top">
+                            <?php echo $this->app->html->_('date', $comment->created, $this->app->date->format(JText::_('DATE_FORMAT_COMMENTS')), $this->app->date->getOffset()); ?>
+                            | <a class="uk-link-reset" href="#comment-<?php echo $comment->id; ?>" rel="nofollow">#</a>                            
+                        </p>
+                    </div>
                 </div>
-                <!--/noindex-->
-            </div>
 
-            <div class="comment-body uk-comment-body">
+                <div class="uk-position-top-right uk-position-small uk-hidden-hover">
+                    <?php if ($comment->getItem()->isCommentsEnabled()) : ?>
+                    <a class="reply uk-button uk-button-primary uk-button-small" href="#" rel="nofollow">
+                        <?php echo JText::_('Reply'); ?>
+                    </a>
 
-                <div class="content"><?php echo $this->app->comment->filterContentOutput($comment->content); ?></div>
-
-                <?php if ($comment->getItem()->isCommentsEnabled()) : ?>
-                    <p><a class="reply uk-button uk-button-primary uk-button-mini" href="#" rel="nofollow"><?php echo JText::_('Reply'); ?></a>
                         <?php if ($comment->canManageComments()) : ?>
 
                             <?php echo ' | '; ?>
-                            <a class="edit" href="#" rel="nofollow"><?php echo JText::_('Edit'); ?></a>
+                                <a class="edit" href="#" rel="nofollow"><?php echo JText::_('Edit'); ?></a>
                             <?php echo ' | '; ?>
 
                             <?php if ($comment->state != Comment::STATE_APPROVED) : ?>
                                 <a href="<?php echo 'index.php?option=com_zoo&controller=comment&task=approve&comment_id=' . $comment->id; ?>"
-                                   rel="nofollow"><?php echo JText::_('Approve'); ?></a>
+                                    rel="nofollow"><?php echo JText::_('Approve'); ?></a>
                             <?php else: ?>
                                 <a href="<?php echo 'index.php?option=com_zoo&controller=comment&task=unapprove&comment_id=' . $comment->id; ?>"
-                                   rel="nofollow"><?php echo JText::_('Unapprove'); ?></a>
+                                    rel="nofollow"><?php echo JText::_('Unapprove'); ?></a>
                             <?php endif; ?>
 
                             <?php echo ' | '; ?>
-                            <a href="<?php echo 'index.php?option=com_zoo&controller=comment&task=spam&comment_id=' . $comment->id; ?>"
-                               rel="nofollow"><?php echo JText::_('Spam'); ?></a>
+                                <a href="<?php echo 'index.php?option=com_zoo&controller=comment&task=spam&comment_id=' . $comment->id; ?>"
+                                rel="nofollow"><?php echo JText::_('Spam'); ?></a>
 
                             <?php echo ' | '; ?>
-                            <a href="<?php echo 'index.php?option=com_zoo&controller=comment&task=delete&comment_id=' . $comment->id; ?>"
-                               rel="nofollow"><?php echo JText::_('Delete'); ?></a>
+                                <a href="<?php echo 'index.php?option=com_zoo&controller=comment&task=delete&comment_id=' . $comment->id; ?>"
+                                rel="nofollow"><?php echo JText::_('Delete'); ?></a>
+                            <?php endif; ?>
 
                         <?php endif; ?>
-                    </p>
-                <?php endif; ?>
 
-                <?php if ($comment->state != Comment::STATE_APPROVED) : ?>
-                    <div class="uk-alert">
-                        <i class="uk-icon-refresh uk-icon-spin"></i>
-                        <?php echo JText::_('COMMENT_AWAITING_MODERATION'); ?>
-                    </div>
-                <?php endif; ?>
+                        <?php if ($comment->state != Comment::STATE_APPROVED) : ?>
+                            <div class="uk-alert">
+                                <i class="uk-icon-refresh uk-icon-spin"></i>
+                                <?php echo JText::_('COMMENT_AWAITING_MODERATION'); ?>
+                            </div>
+                        <?php endif; ?>
+                </div>
 
-            </div>
+            </header>
+            <div class="uk-comment-body content"><?php echo $this->app->comment->filterContentOutput($comment->content); ?></div>
+        </article>
 
-        </div>
+
 
         <?php if (count($childComments)) : ?>
             <ul class="level<?php echo ++$level; ?>">
