@@ -22,12 +22,43 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 <div <?php if ($this->checkPosition('tags')) : ?> data-tag="<?php echo $this->renderPosition('tags'); ?>"<?php endif; ?> class="some-class">
     <div class="el-item uk-card uk-card-primary uk-card-small">
         
-    <div class="uk-card-media-top">
+        <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0"><!-- Здесь ошибка. Вынести в отдельный блок -->
             <?php if ($this->checkPosition('image')) : ?>
                 <div class="item-image kuku-align-<?php echo $align; ?>">
                     <?php echo $this->renderPosition('image'); ?>
                 </div>
             <?php endif; ?>
+
+            <?php if ($this->checkPosition('top_left')) : ?>
+                <div class="uk-position-top-left uk-overlay">
+                    <?php echo $this->renderPosition('top_left', array('style' => 'block')); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->checkPosition('top_right')) : ?>
+                <div class="uk-position-top-right uk-overlay">
+                    <?php echo $this->renderPosition('top_right', array('style' => 'block')); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->checkPosition('bottom_left')) : ?>
+                <div class="uk-position-bottom-left uk-overlay">
+                    <?php echo $this->renderPosition('bottom_left', array('style' => 'block')); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->checkPosition('bottom_right')) : ?>
+                <div class="uk-position-bottom-right uk-overlay uk-overlay-default uk-padding-small">
+                    <?php echo $this->renderPosition('bottom_right'); ?>
+                </div>
+            <?php endif; ?>
+
+            <?php if ($this->checkPosition('bottom_overlay')) : ?>
+                <div class="uk-position-bottom-right uk-overlay uk-overlay-default uk-padding-small">
+                    <?php echo $this->renderPosition('bottom_overlay'); ?>
+                </div>
+            <?php endif; ?>
+            
         </div>
 
         <div class="uk-card-body">

@@ -69,36 +69,53 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         <div class="uk-margin-remove" uk-scrollspy-class>
                             <?php echo $this->renderPosition('image'); ?>
                         </div>
+                        <?php endif; ?>                                            
+
+                        <div class="uk-position-center uk-light">
+                            <span uk-overlay-icon></span>
+                        </div>
+
+                         
+                        <?php if ($this->checkPosition('top_left')) : ?>
+                            <div class="uk-position-top-left uk-overlay">
+                                <?php echo $this->renderPosition('top_left', array('style' => 'block')); ?>
+                            </div>
                         <?php endif; ?>
 
-                        <!-- Элемент бейджа -->
-                        <?php if ($this->checkPosition('badge')) : ?>
-                        <div class="uk-position-top-left uk-overlay">
-                            <div class="badge-free-delivery">
-                                <?php //echo $this->renderPosition('badge'); ?>
-                                <!-- ВРЕМЕННО -->
-                                <!-- <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве"> -->
+                        <?php if ($this->checkPosition('top_right')) : ?>
+                            <div class="uk-position-top-right uk-overlay">
+                                <?php echo $this->renderPosition('top_right', array('style' => 'block')); ?>
                             </div>
-                        </div>
-                        <?php endif; ?>                                               
-                    
-                        <!-- Элемент кнопки Избранное -->
-                        <?php if ($this->checkPosition('favourite')) : ?>
-                        <div class="uk-position-top-right uk-overlay uk-overlay-default"> 
-                            <div class="button-favourite">
-                                <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
-                            </div>
-                        </div>
                         <?php endif; ?>
-                        <!-- <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
-                        <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>                        
-                        <div class="uk-position-center uk-overlay uk-overlay-default">Centner</div>
+
+                        <?php if ($this->checkPosition('bottom_left')) : ?>
+                            <div class="uk-position-bottom-left uk-overlay">
+                                <?php echo $this->renderPosition('bottom_left', array('style' => 'block')); ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($this->checkPosition('bottom_right')) : ?>
+                            <div class="uk-position-bottom-right uk-overlay">
+                                <?php echo $this->renderPosition('bottom_right', array('style' => 'block')); ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($this->checkPosition('bottom_overlay')) : ?>
+                            <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                                <ul class="uk-list uk-text-small">
+                                    <?php echo $this->renderPosition('bottom_overlay', array('style' => 'list')); ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+
+                        <!--
+                        <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>
+                        <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
+                        <div class="uk-position-center uk-overlay uk-overlay-default">Center</div>
                         <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
-                        <div class="uk-position-bottom-left uk-overlay uk-overlay-default">Bottom Left</div>
                         <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
-                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div> 
-                        <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-primary">
-                        </div> -->
+
+                        -->
 
                     </div>
 

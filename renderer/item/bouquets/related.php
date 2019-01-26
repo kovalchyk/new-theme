@@ -28,11 +28,20 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
         <div class="uk-overlay uk-position-bottom uk-overlay-default">
             <div class="el-content uk-margin">
                 <!-- Название итема -->
-                <?php if ($this->checkPosition('title')) : ?>
-                    <div class="teaser-name">
-                        <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove"><?php echo $this->renderPosition('title'); ?></h5>
-                    </div>
-                <?php endif; ?>
+                <div class="teaser-price-rating uk-grid-small" uk-grid>
+
+                    <?php if ($this->checkPosition('title')) : ?>
+                        <div class="teaser-name uk-width-expand@m">
+                            <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove"><?php echo $this->renderPosition('title'); ?></h5>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->checkPosition('sku')) : ?>
+                        <div class="sku uk-width-auto@m">
+                            <?php echo $this->renderPosition('sku'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
                 <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small" uk-grid>
                     <!-- Цена итема -->
                     <?php if ($this->checkPosition('price')) : ?>
