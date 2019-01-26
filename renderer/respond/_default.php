@@ -90,6 +90,7 @@
                         name="author"
                         placeholder="<?php echo JText::_('Name'); ?> <?php if ($req) echo '*'; ?>"
                         value="<?php echo $active_author->name; ?>"
+                        uk-tooltip 
                         <?php if ($req) echo 'required';?>>
                 </div>
             </div>
@@ -102,6 +103,7 @@
                         name="email" 
                         placeholder="<?php echo JText::_('E-mail'); ?> <?php if ($req) echo '*'; ?>" 
                         value="<?php echo $active_author->email; ?>"
+                        uk-tooltip 
                         <?php if ($req) echo 'required';?>>
                 </div>
             </div>
