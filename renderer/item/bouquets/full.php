@@ -66,15 +66,14 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
                         <!-- Блок элемента картинки -->
                         <?php if ($this->checkPosition('image')) : ?>
-                        <div class="uk-margin-remove" uk-scrollspy-class>
+                        <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
                             <?php echo $this->renderPosition('image'); ?>
                         </div>
                         <?php endif; ?>                                            
 
                         <div class="uk-position-center uk-light">
-                            <span uk-overlay-icon></span>
+                            <span class="uk-transition-fade" uk-icon="icon: plus-circle; ratio: 2"></span>
                         </div>
-
                          
                         <?php if ($this->checkPosition('top_left')) : ?>
                             <div class="uk-position-top-left uk-overlay">
@@ -107,16 +106,12 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                 </ul>
                             </div>
                         <?php endif; ?>
-
                         <!--
                         <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>
                         <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
-                        <div class="uk-position-center uk-overlay uk-overlay-default">Center</div>
                         <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
                         <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
-
                         -->
-
                     </div>
 
                     <!-- Блок под картинкой для рейтинга и поделиться -->
@@ -140,11 +135,8 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                     <div class="uk-text-muted uk-text-center">
                                         <div class="uk-margin-small">Намекните на подарок</div>
                                         <!-- uSocial -->
-                                        <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial"
-                                            charset="utf-8"></script>
-                                        <div class="uSocial-Share" data-pid="a06801f02271015b83e83b72ddc1ce5f" data-type="share"
-                                            data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after"
-                                            data-social="vk,fb,ok,twi,pinterest,telegram" data-mobile="vi,wa,sms"></div>
+                                        <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial" charset="utf-8"></script>
+                                        <div class="uSocial-Share" data-pid="a040becb9c4861d5a623368180f84f56" data-type="share" data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after,nomobile" data-social="vk,fb,twi,ok,pinterest,telegram"></div>
                                         <!-- /uSocial -->
                                     </div>
                                 </div>

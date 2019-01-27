@@ -21,19 +21,20 @@
         <position name="subtitle">SubTitle</position>
         <position name="breadcrumbs">Breadcrumbs module</position>
         <position name="image">Image</position>
-        <position name="badge">Badge</position>
+        <position name="top_left">Image: Top Left Corner</position>
+        <position name="top_right">Image: Top Right Corner</position>
+        <position name="bottom_left">Image: Bottom Left Corner</position>
+        <position name="bottom_right">Image: Bottom Right Corner</position>
+        <position name="bottom_overlay">Image: Bottom overlay</position>
         <position name="rating">Rating</position>
         <position name="share">Share</position>
         <position name="shorttext">Short Text</position>
         <position name="price">Price</position>
-        <position name="favourite">Favourite</position>
         <position name="properties">Tab: Properties</position>
         <position name="fulltext">Tab: Full Text</position>
         <position name="gallery">Tab: Gallery</position>
         <position name="comments">Tab: Comments</position>
         <position name="related">Related items</position>
-        <position name="upsell">Upsell (Another related items)</position>
-        <position name="crossell">Crossell (Another related items)</position>
         <position name="hits">Total Hits</position>
         <position name="jmodule">Load Joomla module</position>
     </positions>
@@ -41,6 +42,11 @@
     <positions layout="teaser">
         <position name="title">Title</position>
         <position name="image">Image</position>
+        <position name="top_left">Image: Top Left Corner</position>
+        <position name="top_right">Image: Top Right Corner</position>
+        <position name="bottom_left">Image: Bottom Left Corner</position>
+        <position name="bottom_right">Image: Bottom Right Corner</position>
+        <position name="bottom_overlay">Image: Bottom overlay</position>
         <position name="price">Price</position>
         <position name="rating">Rating</position>
         <position name="buttonbuy">Button Buy</position>
@@ -50,7 +56,13 @@
 
     <positions layout="related">
         <position name="title">Title</position>
+        <position name="sku">SKU</position>
         <position name="image">Image</position>
+        <position name="top_left">Image: Top Left Corner</position>
+        <position name="top_right">Image: Top Right Corner</position>
+        <position name="bottom_left">Image: ottom Left Corner</position>
+        <position name="bottom_right">Image: Bottom Right Corner</position>
+        <position name="bottom_overlay">Image: Bottom overlay</position>
         <position name="price">Price</position>
         <position name="rating">Rating</position>
         <position name="buttonbuy">Button Buy</position>

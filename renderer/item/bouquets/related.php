@@ -23,7 +23,9 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
     <div class="uk-cover-container uk-transition-toggle" tabindex="0">
         <!-- Элемент картинки -->
         <?php if ($this->checkPosition('image')) : ?>
+            <div class="uk-transition-scale-up uk-transition-opaque">
                 <?php echo $this->renderPosition('image'); ?>
+            </div>
         <?php endif; ?>
         <div class="uk-overlay uk-position-bottom uk-overlay-default">
             <div class="el-content uk-margin">

@@ -66,40 +66,52 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
                         <!-- Блок элемента картинки -->
                         <?php if ($this->checkPosition('image')) : ?>
-                        <div class="uk-margin-remove" uk-scrollspy-class>
+                        <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
                             <?php echo $this->renderPosition('image'); ?>
                         </div>
+                        <?php endif; ?>                                            
+
+                        <div class="uk-position-center uk-light">
+                            <span class="uk-transition-fade" uk-icon="icon: plus-circle; ratio: 2"></span>
+                        </div>
+                         
+                        <?php if ($this->checkPosition('top_left')) : ?>
+                            <div class="uk-position-top-left uk-overlay">
+                                <?php echo $this->renderPosition('top_left', array('style' => 'block')); ?>
+                            </div>
                         <?php endif; ?>
 
-                        <!-- Элемент бейджа -->
-                        <?php if ($this->checkPosition('badge')) : ?>
-                        <div class="uk-position-top-left uk-overlay">
-                            <div class="badge-free-delivery">
-                                <?php //echo $this->renderPosition('badge'); ?>
-                                <!-- ВРЕМЕННО -->
-                                <!-- <img src="/images/site/icons/badge-delivery.png" class="el-image" alt="Бесплатная доставка по Москве"> -->
+                        <?php if ($this->checkPosition('top_right')) : ?>
+                            <div class="uk-position-top-right uk-overlay">
+                                <?php echo $this->renderPosition('top_right', array('style' => 'block')); ?>
                             </div>
-                        </div>
-                        <?php endif; ?>                                               
-                    
-                        <!-- Элемент кнопки Избранное -->
-                        <?php if ($this->checkPosition('favourite')) : ?>
-                        <div class="uk-position-top-right uk-overlay uk-overlay-default"> 
-                            <div class="button-favourite">
-                                <?php echo $this->renderPosition('favourite', array('style' => 'block')); ?>
-                            </div>
-                        </div>
                         <?php endif; ?>
-                        <!-- <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
-                        <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>                        
-                        <div class="uk-position-center uk-overlay uk-overlay-default">Centner</div>
+
+                        <?php if ($this->checkPosition('bottom_left')) : ?>
+                            <div class="uk-position-bottom-left uk-overlay">
+                                <?php echo $this->renderPosition('bottom_left', array('style' => 'block')); ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($this->checkPosition('bottom_right')) : ?>
+                            <div class="uk-position-bottom-right uk-overlay">
+                                <?php echo $this->renderPosition('bottom_right', array('style' => 'block')); ?>
+                            </div>
+                        <?php endif; ?>
+
+                        <?php if ($this->checkPosition('bottom_overlay')) : ?>
+                            <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                                <ul class="uk-list uk-text-small">
+                                    <?php echo $this->renderPosition('bottom_overlay', array('style' => 'list')); ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                        <!--
+                        <div class="uk-position-top-center uk-overlay uk-overlay-default">Top Center</div>
+                        <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
                         <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
-                        <div class="uk-position-bottom-left uk-overlay uk-overlay-default">Bottom Left</div>
                         <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
-                        <div class="uk-position-bottom-right uk-overlay uk-overlay-default">Bottom Right</div> 
-                        <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-primary">
-                        </div> -->
-
+                        -->
                     </div>
 
                     <!-- Блок под картинкой для рейтинга и поделиться -->
@@ -123,11 +135,8 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                     <div class="uk-text-muted uk-text-center">
                                         <div class="uk-margin-small">Намекните на подарок</div>
                                         <!-- uSocial -->
-                                        <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial"
-                                            charset="utf-8"></script>
-                                        <div class="uSocial-Share" data-pid="a06801f02271015b83e83b72ddc1ce5f" data-type="share"
-                                            data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after"
-                                            data-social="vk,fb,ok,twi,pinterest,telegram" data-mobile="vi,wa,sms"></div>
+                                        <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial" charset="utf-8"></script>
+                                        <div class="uSocial-Share" data-pid="a040becb9c4861d5a623368180f84f56" data-type="share" data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after,nomobile" data-social="vk,fb,twi,ok,pinterest,telegram"></div>
                                         <!-- /uSocial -->
                                     </div>
                                 </div>
@@ -389,7 +398,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
                 <!-- Элемент похожих товаров -->
                 <div class="uk-tile uk-tile-muted uk-tile-small">
-                    <h3 class="uk-heading-line uk-text-center" uk-scrollspy-class><span>Другие похожие букеты</span></h3>
+                    <h3 class="uk-heading-line uk-text-center" uk-scrollspy-class><span>Другие похожие цветы</span></h3>
                     <div class="uk-margin uk-text-left" uk-scrollspy-class uk-slider>
                         <div class="uk-position-relative">
                             <ul class="uk-slider-items uk-grid uk-grid-small">
