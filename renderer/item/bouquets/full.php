@@ -422,7 +422,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
         <!-- Модуль -->
         <?php if ($this->checkPosition('jmodule')) : ?>
-            <?php echo $this->renderPosition('jmodule'); ?>
+            <div class="uk-margin">
+                <?php echo $this->renderPosition('jmodule'); ?>
+            </div>
         <?php endif; ?>
     <!-- Next Section for impressive functionality )) -->
 </div>
