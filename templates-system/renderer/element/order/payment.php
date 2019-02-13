@@ -37,7 +37,7 @@ $classes = array_filter(array(
     'jbcart-payment-' . $element->getElementType(),
     $params->get('first') ? 'first' : '',
     $params->get('last') ? 'last' : '',
-    'uk-width-medium-1-' . $column,
+    'uk-width-1-' . $column,
     $isError ? 'error' : null,
 ));
 

@@ -33,13 +33,13 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                 <div class="teaser-price-rating uk-grid-small" uk-grid>
 
                     <?php if ($this->checkPosition('title')) : ?>
-                        <div class="teaser-name uk-width-expand@m">
+                        <div class="teaser-name uk-width-expand">
                             <h3 class="uk-h5 uk-heading-line uk-text-truncate uk-margin-remove"><?php echo $this->renderPosition('title'); ?></h5>
                         </div>
                     <?php endif; ?>
 
                     <?php if ($this->checkPosition('sku')) : ?>
-                        <div class="sku uk-width-auto@m">
+                        <div class="sku uk-width-auto">
                             <?php echo $this->renderPosition('sku'); ?>
                         </div>
                     <?php endif; ?>

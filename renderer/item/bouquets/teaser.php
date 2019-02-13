@@ -25,7 +25,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0"><!-- Здесь ошибка. Вынести в отдельный блок -->
 
             <!-- <div class="uk-position-center uk-light">
-                <span class="uk-transition-fade" uk-icon="icon: plus-circle; ratio: 2"></span>
+                <span class="uk-transition-fade" uk-icon="icon: more; ratio: 2"></span>
             </div> -->
 
             <?php if ($this->checkPosition('image')) : ?>
@@ -42,7 +42,9 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
             <?php if ($this->checkPosition('top_right')) : ?>
                 <div class="uk-position-top-right uk-overlay uk-overlay-default uk-padding-small">
-                    <?php echo $this->renderPosition('top_right', array('style' => 'block')); ?>
+                    <div class="uk-text-meta">
+                        <div uk-icon="icon: arrow-left"></div><?php echo $this->renderPosition('top_right'); ?><div uk-icon="icon: arrow-right"></div>
+                    </div>
                 </div>
             <?php endif; ?>
 
@@ -59,8 +61,10 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
             <?php endif; ?>
 
             <?php if ($this->checkPosition('bottom_overlay')) : ?>
-                <div class="uk-position-bottom-right uk-overlay uk-overlay-default uk-padding-small">
-                    <?php echo $this->renderPosition('bottom_overlay'); ?>
+                <div class="uk-transition-slide-bottom uk-position-large uk-position-bottom uk-overlay uk-overlay-default">
+                    <ul class="uk-list uk-text-small">
+                        <?php echo $this->renderPosition('bottom_overlay', array('style' => 'list')); ?>
+                    </ul>
                 </div>
             <?php endif; ?>
             
@@ -69,13 +73,13 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
         <div class="uk-card-body">
 
             <?php if ($this->checkPosition('title')) : ?>
-                <h4 class="uk-h5 uk-margin-remove-adjacent uk-margin-small-bottom"><?php echo $this->renderPosition('title'); ?></h4>
+                <h4 class="uk-h5 uk-margin-small"><?php echo $this->renderPosition('title'); ?></h4>
             <?php endif; ?>
 
             <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small" uk-grid>
 
                 <?php if ($this->checkPosition('price')) : ?>
-                    <div class="price uk-first-column">
+                    <div class="price">
                     <h3 class="uk-h4"><?php echo $this->renderPosition('price', array('style' => 'block')); ?></h3>
                     </div>
                 <?php endif; ?>                    
@@ -90,33 +94,26 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="uk-margin-remove-bottom uk-grid-small uk-grid-margin-small" uk-grid>
+            <div class="uk-flex-middle uk-margin-small uk-grid-small" uk-grid>
                 <div class="uk-width-2-3">
                     <div class="cart-button">
-                    
                         <?php if ($this->checkPosition('buttonbuy')) : ?>
-                            <div class="cart-button">
-                                <?php echo $this->renderPosition('buttonbuy', array('style' => 'block')); ?>
-                            </div>
+                            <?php echo $this->renderPosition('buttonbuy', array('style' => 'block')); ?>
                         <?php endif; ?>
-
                     </div>
                 </div>
                 <div class="uk-width-expand">
-
                     <?php if ($this->checkPosition('favourite')) : ?>
                         <div class="favorite-button uk-text-right">
                             <?php echo $this->renderPosition('favourite'); ?>
                         </div>
                     <?php endif; ?>
 
-
                     <?php if ($this->checkPosition('quick-view')) : ?>
                         <div class="item-quick-view uk-divider">
                             <?php echo $this->renderPosition('quick-view', array('style' => 'block')); ?>
                         </div>
                     <?php endif; ?>                        
-
                 </div>
             </div>
         </div>

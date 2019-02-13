@@ -29,7 +29,7 @@ if ($this->checkPosition('list')) : ?>
                     'jsHeightFixRow',
                 ),
             ),
-            'column' => 3
+            'column' => 2
         ));
         ?>
     </div>

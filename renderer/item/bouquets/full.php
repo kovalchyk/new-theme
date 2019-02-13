@@ -62,9 +62,10 @@ $tabsId = $this->app->jbstring->getId('tabs');
             <!-- Ячейка картинки и краткой информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
                 <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
-
+                        
+                    <!-- Блок элемента картинки -->
                     <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
-                        <!-- Блок элемента картинки -->
+                        
                         <?php if ($this->checkPosition('image')) : ?>
                         <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
                             <?php echo $this->renderPosition('image'); ?>
@@ -198,9 +199,6 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                             </ul>
                                             <ul id="js-484" class="uk-switcher">
                                                 <li class="el-item">
-                                                    <!-- <h3 class="el-title uk-margin uk-h5 uk-heading-line">
-																<span>Оплата</span>
-																</h3> -->
                                                     <div class="el-content uk-margin">
                                                         <div class="el-item">
                                                             Для удобства совершения покупок в нашем магазине мы обеспечиваем возможность оплаты несколькими
@@ -210,9 +208,6 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                     </div>
                                                 </li>
                                                 <li class="el-item">
-                                                    <!-- <h3 class="el-title uk-margin uk-h5 uk-heading-line">
-																<span>Доставка</span>
-																</h3> -->
                                                     <div class="el-content uk-margin">
                                                         <div class="el-item">
                                                             <p>При заказе до 5000 руб. стоимость доставки составляет 500р.<br />
@@ -236,7 +231,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                                 <br />
                                                                 <a href="tel:+79647213136">☎ 964 721-31-36</a>
                                                                 <br />
-                                                                <a href="tel:+79647213136">☎ 964 721-31-36</a>
+                                                                <a href="tel:+79647213235">☎ 964 721-32-35</a>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -331,17 +326,17 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                 <?php echo $this->renderPosition('shorttext'); ?>
                                             </div>
                                             
-                                             <!-- Блок элемента значков -->
-                                             <!-- <div class="uk-width-expand@m">
-                                                <div class="uk-margin uk-display-inline">
-                                                    <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
-                                                </div>
-                                                <div class="uk-margin uk-display-inline">
-                                                    <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
-                                                </div>
-                                                <div class="uk-margin uk-display-inline">
-                                                    <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
-                                                </div>
+                                            <!-- Блок элемента значков -->
+                                            <!-- <div class="uk-width-expand@m">
+                                               <div class="uk-margin uk-display-inline">
+                                                   <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
+                                               </div>
+                                               <div class="uk-margin uk-display-inline">
+                                                   <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
+                                               </div>
+                                               <div class="uk-margin uk-display-inline">
+                                                   <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
+                                               </div>
                                             </div> -->
                                            
                                             <!-- Блок списка параметров -->
