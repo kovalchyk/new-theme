@@ -26,6 +26,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
             <div class="uk-transition-scale-up uk-transition-opaque">
                 <?php echo $this->renderPosition('image'); ?>
             </div>
+            <div class="uk-height-small uk-card uk-card-default"></div>            
         <?php endif; ?>
         <div class="uk-overlay uk-position-bottom uk-overlay-default">
             <div class="el-content uk-margin">
