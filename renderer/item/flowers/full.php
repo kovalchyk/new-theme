@@ -62,9 +62,10 @@ $tabsId = $this->app->jbstring->getId('tabs');
             <!-- Ячейка картинки и краткой информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
                 <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
-
+                        
+                    <!-- Блок элемента картинки -->
                     <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
-                        <!-- Блок элемента картинки -->
+                        
                         <?php if ($this->checkPosition('image')) : ?>
                         <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
                             <?php echo $this->renderPosition('image'); ?>
@@ -163,20 +164,27 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             <div uk-scrollspy-class class="el-item uk-panel">
                                 <div class="el-content uk-margin">
                                     <div class="uk-card uk-card-primary uk-card-body">
-                                        <!-- Возможно, рендеринг позиции названия из элемента цены -->
+                                        <div class="uk-grid-small uk-grid-divider" uk-grid>
+                                            <div class="uk-width-3-4">
+                                                <!-- Возможно, рендеринг позиции названия из элемента цены -->
+                                                <?php if ($this->checkPosition('subtitle')) : ?>
+                                                    <h2 class="uk-h4 uk-text-truncate uk-margin-small">
+                                                        <?php echo $this->renderPosition('subtitle'); ?>
+                                                    </h2>
+                                                <?php endif; ?>
 
-                                        <?php if ($this->checkPosition('subtitle')) : ?>
-                                            <h2 class="uk-h4 uk-text-truncate uk-margin-small">
-                                                <?php echo $this->renderPosition('subtitle'); ?>
-                                            </h2>
-                                        <?php endif; ?>
-
-
-                                        <?php if ($this->checkPosition('price')) : ?>
-                                            <div class="item-price">
-                                                <?php echo $this->renderPosition('price'); ?>
+                                                <?php if ($this->checkPosition('price')) : ?>
+                                                    <div class="item-price">
+                                                        <?php echo $this->renderPosition('price'); ?>
+                                                    </div>
+                                                <?php endif; ?>                                        
                                             </div>
-                                        <?php endif; ?>
+                                            <div class="uk-width-1-4 uk-margin-small">
+                                                <div><img src="images/site/icons/badge-delivery.png"></div>
+                                                <div><img src="images/site/icons/badge-delivery.png"></div>
+                                            </div>
+                                        </div>
+
 
                                     </div>
                                 </div>
@@ -198,21 +206,20 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                             </ul>
                                             <ul id="js-484" class="uk-switcher">
                                                 <li class="el-item">
-                                                    <!-- <h3 class="el-title uk-margin uk-h5 uk-heading-line">
-																<span>Оплата</span>
-																</h3> -->
                                                     <div class="el-content uk-margin">
                                                         <div class="el-item">
-                                                            Для удобства совершения покупок в нашем магазине мы обеспечиваем возможность оплаты несколькими
-                                                            способами: наличными курьеру или в офисе, банковской картой
-                                                            или с помощью электронной валюты Webmoney.
+
+
+                                                <div class="uk-margin uk-text-small">
+                                                    <ul class="uk-list uk-list-divider">
+                                                        <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
+                                                    </ul>
+                                                </div>
+
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li class="el-item">
-                                                    <!-- <h3 class="el-title uk-margin uk-h5 uk-heading-line">
-																<span>Доставка</span>
-																</h3> -->
                                                     <div class="el-content uk-margin">
                                                         <div class="el-item">
                                                             <p>При заказе до 5000 руб. стоимость доставки составляет 500р.<br />
@@ -236,7 +243,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                                 <br />
                                                                 <a href="tel:+79647213136">☎ 964 721-31-36</a>
                                                                 <br />
-                                                                <a href="tel:+79647213136">☎ 964 721-31-36</a>
+                                                                <a href="tel:+79647213235">☎ 964 721-32-35</a>
                                                             </p>
                                                         </div>
                                                     </div>
@@ -331,17 +338,17 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                                 <?php echo $this->renderPosition('shorttext'); ?>
                                             </div>
                                             
-                                             <!-- Блок элемента значков -->
-                                             <!-- <div class="uk-width-expand@m">
-                                                <div class="uk-margin uk-display-inline">
-                                                    <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
-                                                </div>
-                                                <div class="uk-margin uk-display-inline">
-                                                    <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
-                                                </div>
-                                                <div class="uk-margin uk-display-inline">
-                                                    <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
-                                                </div>
+                                            <!-- Блок элемента значков -->
+                                            <!-- <div class="uk-width-expand@m">
+                                               <div class="uk-margin uk-display-inline">
+                                                   <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
+                                               </div>
+                                               <div class="uk-margin uk-display-inline">
+                                                   <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
+                                               </div>
+                                               <div class="uk-margin uk-display-inline">
+                                                   <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
+                                               </div>
                                             </div> -->
                                            
                                             <!-- Блок списка параметров -->
@@ -398,7 +405,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
                 <!-- Элемент похожих товаров -->
                 <div class="uk-tile uk-tile-muted uk-tile-small">
-                    <h3 class="uk-heading-line uk-text-center" uk-scrollspy-class><span>Другие похожие цветы</span></h3>
+                    <h3 class="uk-heading-line uk-text-center" uk-scrollspy-class><span>Другие похожие букеты</span></h3>
                     <div class="uk-margin uk-text-left" uk-scrollspy-class uk-slider>
                         <div class="uk-position-relative">
                             <ul class="uk-slider-items uk-grid uk-grid-small">
@@ -422,7 +429,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
         <!-- Модуль -->
         <?php if ($this->checkPosition('jmodule')) : ?>
-            <?php echo $this->renderPosition('jmodule'); ?>
+            <div class="uk-margin">
+                <?php echo $this->renderPosition('jmodule'); ?>
+            </div>
         <?php endif; ?>
     <!-- Next Section for impressive functionality )) -->
 </div>

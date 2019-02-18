@@ -73,7 +73,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
         <div class="uk-card-body">
 
             <?php if ($this->checkPosition('title')) : ?>
-                <h4 class="uk-h5 uk-margin-small"><?php echo $this->renderPosition('title'); ?></h4>
+                <h4 class="uk-h5 uk-margin-small uk-text-truncate"><?php echo $this->renderPosition('title'); ?></h4>
             <?php endif; ?>
 
             <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small" uk-grid>

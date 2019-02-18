@@ -21,7 +21,7 @@ $isPayment = (int)$view->config->get('tmpl_button_payment', 1) && $view->payment
 
 ?>
 
-<div class="uk-text-center jbform-actions uk-clearfix">
+<div class="uk-text-center">
 
     <?php if ($isCreate) : ?>
         <input type="submit" name="create" value="<?php echo JText::_('JBZOO_CART_SUBMIT'); ?>"
