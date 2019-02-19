@@ -22,8 +22,10 @@ $pagination = $vars['object'];
 $this->app->jbdebug->mark('layout::pagination::start');
 
 if (!$pagination->getShowAll()) : ?>
-    <ul class="uk-pagination">
-        <?php echo $this->app->jbuikit->paginate($pagination, $url); ?>
-    </ul>
+    <div class="uk-margin uk-flex uk-flex-center">
+        <ul class="uk-pagination uk-text-lead">
+            <?php echo $this->app->jbuikit->paginate($pagination, $url); ?>
+        </ul>
+    </div>
 <?php endif;
 $this->app->jbdebug->mark('layout::pagination::finish');
