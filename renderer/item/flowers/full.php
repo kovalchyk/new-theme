@@ -115,6 +115,17 @@ $tabsId = $this->app->jbstring->getId('tabs');
                         -->
                     </div>
 
+
+
+                    <div class="uk-margin-small gallery">
+                        <?php if ($this->checkPosition('gallery')) : ?>
+                            <!-- Элемент дополнительных фото товара -->
+                            <div class="uk-flex uk-flex-center">
+                                <?php echo $this->renderPosition('gallery'); ?>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+
                     <!-- Блок под картинкой для рейтинга и поделиться -->
                     <div class="uk-card uk-card-small uk-card-default uk-card-body">
                         <div class="uk-margin-small uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>

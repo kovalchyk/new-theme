@@ -86,7 +86,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
                 <div class="teaser-rating">
                     <?php if ($this->checkPosition('rating')) : ?>
-                        <div class="uk-text-right">
+                        <div class="uk-align-right">
                             <div style="zoom: 1" class="">
                                 <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
                             </div>
