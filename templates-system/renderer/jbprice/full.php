@@ -20,9 +20,9 @@ if ($this->checkPosition('attributes')) {
 }
 
 if ($this->checkPosition('price') || $this->checkPosition('buttons')) { ?>
-    <div class="uk-margin uk-card uk-card-default">
-        <div class="uk-child-width-1-2 uk-grid-small" uk-grid>
-            <div class="uk-h3 uk-text-right uk-first-column"><?php echo $this->renderPosition('price'); ?></div>
+    <div class="uk-placeholder">
+        <div class="uk-child-width-auto uk-grid-small" uk-grid>
+            <div class="uk-h4"><?php echo $this->renderPosition('price'); ?></div>
             <!-- <div class="uk-h5 uk-text-danger"><del>12 000 <span class="">₽</span></del></div> -->
         </div>
     </div>
