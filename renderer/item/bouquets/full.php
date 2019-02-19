@@ -60,222 +60,216 @@ $tabsId = $this->app->jbstring->getId('tabs');
         <div class="uk-grid-medium" uk-grid>
             <!-- Ячейка картинки и краткой информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
-                <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
-                        
-                    <!-- Блок элемента картинки -->
-                    <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
-                        
-                        <?php if ($this->checkPosition('image')) : ?>
-                        <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
-                            <?php echo $this->renderPosition('image'); ?>
-                        </div>
-                        <?php endif; ?>                                            
 
-                        <div class="uk-position-center uk-light">
-                            <span class="uk-transition-fade" uk-icon="icon: plus-circle; ratio: 2"></span>
-                        </div>
-                         
-                        <?php if ($this->checkPosition('top_left')) : ?>
-                            <div class="uk-position-top-left uk-overlay">
-                                <?php echo $this->renderPosition('top_left', array('style' => 'block')); ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($this->checkPosition('top_right')) : ?>
-                            <div class="uk-position-top-right uk-overlay">
-                                <?php echo $this->renderPosition('top_right', array('style' => 'block')); ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($this->checkPosition('bottom_left')) : ?>
-                            <div class="uk-position-bottom-left uk-overlay">
-                                <?php echo $this->renderPosition('bottom_left', array('style' => 'block')); ?>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($this->checkPosition('bottom_right')) : ?>
-                            <div class="uk-position-top-center uk-overlay">
-                                <div uk-icon="icon: arrow-left"></div><?php echo $this->renderPosition('bottom_right'); ?><div uk-icon="icon: arrow-right"></div>
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if ($this->checkPosition('bottom_overlay')) : ?>
-                            <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
-                                <ul class="uk-list uk-text-small">
-                                    <?php echo $this->renderPosition('bottom_overlay', array('style' => 'list')); ?>
-                                </ul>
-                            </div>
-                        <?php endif; ?>
-
-                        <!--
-                        <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
-                        <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
-                        <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
-                        -->
+                <!-- Блок элемента картинки -->
+                <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
+                    
+                    <?php if ($this->checkPosition('image')) : ?>
+                    <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
+                        <?php echo $this->renderPosition('image'); ?>
                     </div>
+                    <?php endif; ?>                                            
 
-                    <div class="uk-margin-small gallery">
-                        <?php if ($this->checkPosition('gallery')) : ?>
-                            <!-- Элемент дополнительных фото товара -->
-                            <div class="uk-flex uk-flex-center">
-                                <?php echo $this->renderPosition('gallery'); ?>
-                            </div>
-                        <?php endif; ?>
+                    <div class="uk-position-center uk-light">
+                        <span class="uk-transition-fade" uk-icon="icon: plus-circle; ratio: 2"></span>
                     </div>
+                        
+                    <?php if ($this->checkPosition('top_left')) : ?>
+                        <div class="uk-position-top-left uk-overlay">
+                            <?php echo $this->renderPosition('top_left', array('style' => 'block')); ?>
+                        </div>
+                    <?php endif; ?>
 
-                    <!-- Блок под картинкой для рейтинга и поделиться -->
-                    <div class="uk-card uk-card-small uk-card-default uk-card-body">
-                        <div class="uk-margin-small uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
+                    <?php if ($this->checkPosition('top_right')) : ?>
+                        <div class="uk-position-top-right uk-overlay">
+                            <?php echo $this->renderPosition('top_right', array('style' => 'block')); ?>
+                        </div>
+                    <?php endif; ?>
 
-                            <!-- Элемент рейтинга -->
-                            <?php if ($this->checkPosition('rating')) : ?>
-                            <div uk-scrollspy-class class="el-item uk-panel">
-                                <div class="el-content">
-                                    <div class="uk-text-muted">
-                                        <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
-                                    </div>
+                    <?php if ($this->checkPosition('bottom_left')) : ?>
+                        <div class="uk-position-bottom-left uk-overlay">
+                            <?php echo $this->renderPosition('bottom_left', array('style' => 'block')); ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->checkPosition('bottom_right')) : ?>
+                        <div class="uk-position-top-center uk-overlay">
+                            <div uk-icon="icon: arrow-left"></div><?php echo $this->renderPosition('bottom_right'); ?><div uk-icon="icon: arrow-right"></div>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($this->checkPosition('bottom_overlay')) : ?>
+                        <div class="uk-transition-slide-bottom uk-position-bottom uk-overlay uk-overlay-default">
+                            <ul class="uk-list uk-text-small">
+                                <?php echo $this->renderPosition('bottom_overlay', array('style' => 'list')); ?>
+                            </ul>
+                        </div>
+                    <?php endif; ?>
+
+                    <!--
+                    <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
+                    <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
+                    <div class="uk-position-bottom-center uk-overlay uk-overlay-default">Bottom Center</div>
+                    -->
+                </div>
+
+                <div class="uk-margin-small gallery">
+                    <?php if ($this->checkPosition('gallery')) : ?>
+                        <!-- Элемент дополнительных фото товара -->
+                        <div class="uk-flex uk-flex-center">
+                            <?php echo $this->renderPosition('gallery'); ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+                <!-- Блок под картинкой для рейтинга и поделиться -->
+                <div class="uk-card uk-card-small uk-card-body">
+                    <div class="uk-margin-small uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
+
+                        <!-- Элемент рейтинга -->
+                        <?php if ($this->checkPosition('rating')) : ?>
+                        <div uk-scrollspy-class class="el-item uk-panel">
+                            <div class="el-content">
+                                <div class="uk-text-muted">
+                                    <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
                                 </div>
                             </div>
-                            <?php endif; ?>
+                        </div>
+                        <?php endif; ?>
 
-                            <!-- Элемент поделиться -->
-                            <div uk-scrollspy-class class="el-item uk-panel uk-visible@l">
-                                <div class="el-content">
-                                    <div class="uk-text-muted uk-text-center">
-                                        <div class="uk-margin-small">Намекните на подарок</div>
-                                        <!-- uSocial -->
-                                        <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial" charset="utf-8"></script>
-                                        <div class="uSocial-Share" data-pid="a040becb9c4861d5a623368180f84f56" data-type="share" data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after,nomobile" data-social="vk,fb,twi,ok,pinterest,telegram"></div>
-                                        <!-- /uSocial -->
-                                    </div>
+                        <!-- Элемент поделиться -->
+                        <div uk-scrollspy-class class="el-item uk-panel uk-visible@l">
+                            <div class="el-content">
+                                <div class="uk-text-muted uk-text-center">
+                                    <div class="uk-margin-small">Намекните на подарок</div>
+                                    <!-- uSocial -->
+                                    <script async src="https://usocial.pro/usocial/usocial.js?v=6.1.4" data-script="usocial" charset="utf-8"></script>
+                                    <div class="uSocial-Share" data-pid="a040becb9c4861d5a623368180f84f56" data-type="share" data-options="round-rect,style3,default,absolute,horizontal,size24,eachCounter0,counter1,counter-after,nomobile" data-social="vk,fb,twi,ok,pinterest,telegram"></div>
+                                    <!-- /uSocial -->
                                 </div>
                             </div>
-
                         </div>
 
-                        <!-- Блок элемента краткого описания -->
-                        <?php //if ($this->checkPosition('shorttext')) : ?>
-                            <div class="short-description">
-                                <?php //echo $this->renderPosition('shorttext'); ?>
-                            </div>
-                        <?php //endif; ?>
                     </div>
 
+                    <!-- Блок элемента краткого описания -->
+                    <?php //if ($this->checkPosition('shorttext')) : ?>
+                        <div class="short-description">
+                            <?php //echo $this->renderPosition('shorttext'); ?>
+                        </div>
+                    <?php //endif; ?>
                 </div>
             </div>
             <!-- Ячейка цены и дополнительной информации -->
             <div class="uk-width-expand@m uk-grid-item-match">
-                <div class="-uk-tile-default -uk-tile -uk-tile-xsmall">
-                    <div class="uk-margin uk-child-width-1-1 uk-grid-match" uk-grid>
-                        <div>
-                            <!-- Блок цены -->
-                            <div uk-scrollspy-class class="el-item uk-panel">
-                                <div class="el-content uk-margin">
-                                    <div class="uk-card uk-card-primary uk-card-body">
-                                        <div class="uk-grid-small uk-grid-divider" uk-grid>
-                                            <div class="uk-width-3-4">
-                                                <!-- Возможно, рендеринг позиции названия из элемента цены -->
-                                                <?php if ($this->checkPosition('subtitle')) : ?>
-                                                    <h2 class="uk-h4 uk-text-truncate uk-margin-small">
-                                                        <?php echo $this->renderPosition('subtitle'); ?>
-                                                    </h2>
-                                                <?php endif; ?>
+                <div class="uk-margin uk-child-width-1-1 uk-grid-match" uk-grid>
 
-                                                <?php if ($this->checkPosition('price')) : ?>
-                                                    <div class="item-price">
-                                                        <?php echo $this->renderPosition('price'); ?>
-                                                    </div>
-                                                <?php endif; ?>                                        
-                                            </div>
-                                            <div class="uk-width-1-4 uk-margin-small">
-                                                
-                                                <div class="uk-text-small uk-margin-small">
-                                                    <a class="uk-link-heading"  href="tel:+79999676370">☎ 999 967-63-70</a>
-                                                    <br />
-                                                    <a class="uk-link-heading"  href="tel:+79647213136">☎ 964 721-31-36</a>
-                                                    <br />
-                                                    <a class="uk-link-heading"  href="tel:+79647213235">☎ 964 721-32-35</a>
-                                                </div>
+                    <!-- Блок цены -->
+                    <div uk-scrollspy-class class="el-item uk-panel">
+                        <div class="el-content uk-margin">
+                            <div class="uk-card uk-card-body">
+                                <div class="uk-grid-small uk-grid-divider" uk-grid>
+                                    <div class="uk-width-3-4">
+                                        <!-- Возможно, рендеринг позиции названия из элемента цены -->
+                                        <?php if ($this->checkPosition('subtitle')) : ?>
+                                            <h2 class="uk-h4 uk-text-truncate uk-margin-small">
+                                                <?php echo $this->renderPosition('subtitle'); ?>
+                                            </h2>
+                                        <?php endif; ?>
 
-                                                <div class="uk-text-small uk-text-muted">
-                                                    <a uk-tooltip title="Доставка заказов в пределах МКАД до 2 часов *">- Доставим за 2 часа</span><br />
-                                                    <a uk-tooltip title="Сделаем фото Вашего заказа перед доставкой">- Фото заказа</a><br />
-                                                    <a uk-tooltip title="Чтобы Вы ничем не рисковали мы предлагаем оплату при получении">- Оплата курьеру</a>
-                                                </div>
+                                        <?php if ($this->checkPosition('price')) : ?>
+                                            <div class="item-price">
+                                                <?php echo $this->renderPosition('price'); ?>
                                             </div>
+                                        <?php endif; ?>                                        
+                                    </div>
+
+                                    <div class="uk-width-1-4 uk-margin-small">
+                                        
+                                        <div class="uk-text-small uk-margin-small">
+                                            <a class="uk-link-heading"  href="tel:+79999676370">☎ 999 967-63-70</a>
+                                            <br />
+                                            <a class="uk-link-heading"  href="tel:+79647213136">☎ 964 721-31-36</a>
+                                            <br />
+                                            <a class="uk-link-heading"  href="tel:+79647213235">☎ 964 721-32-35</a>
                                         </div>
 
-
+                                        <div class="uk-text-small uk-text-muted">
+                                            <a uk-tooltip title="Доставка заказов в пределах МКАД до 2 часов *">- Доставим за 2 часа</span><br />
+                                            <a uk-tooltip title="Сделаем фото Вашего заказа перед доставкой">- Фото заказа</a><br />
+                                            <a uk-tooltip title="Чтобы Вы ничем не рисковали мы предлагаем оплату при получении">- Оплата курьеру</a>
+                                        </div>
                                     </div>
                                 </div>
+
+
                             </div>
                         </div>
-                        <div>
-                            <!-- Блок дополнительной информации под ценой -->
-                            <div uk-scrollspy-class class="el-item uk-panel">
-                                <div class="el-content uk-margin">
-                                    <div class="uk-card uk-card-default uk-card-body">
-                                        <div class="uk-margin-small">
-                                            <ul uk-switcher="connect: #js-484;animation: uk-animation-fade" class="uk-margin-small uk-subnav uk-subnav-divider el-nav">
-                                                <li>
-                                                    <a href="#">Состав букета</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#">Доставка</a>
-                                                </li>
-                                            </ul>
-                                            <ul id="js-484" class="uk-switcher">
-                                                <li class="el-item">
-                                                    <div class="el-content uk-margin">
-                                                        <div class="el-item">
-                                                            <div class="uk-margin uk-text-small">
-                                                                <ul class="uk-list uk-list-divider">
-                                                                    <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li class="el-item">
-                                                    <div class="el-content uk-margin">
-                                                        <div class="el-item">
-                                                            <p>При заказе до 5000 руб. стоимость доставки составляет 500р.<br />
-                                                                При заказе свыше 5000р. доставка цветов по Москве бесплатная.<br />
-                                                                Доставка цветов по Москве работает ежедневно с 10:00 - 22:00
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <hr class="uk-divider-icon uk-margin-small">
-                                        <div class="uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s" uk-grid>
-                                            <div class="uk-first-column">
-                                                <div class="el-item uk-panel">
-                                                    <div class="el-content uk-margin">
-                                                        <div class="uk-h6 uk-margin-remove">Телефоны для связи:</div>
-                                                        <div class="">
-                                                            <p class="uk-text-small uk-margin-remove-bottom">
-                                                                <a href="tel:+79999676370">☎ 999 967-63-70</a>
-                                                                <br />
-                                                                <a href="tel:+79647213136">☎ 964 721-31-36</a>
-                                                                <br />
-                                                                <a href="tel:+79647213235">☎ 964 721-32-35</a>
-                                                            </p>
-                                                        </div>
+                    </div>
+
+                    <!-- Блок дополнительной информации под ценой -->
+                    <div uk-scrollspy-class class="el-item uk-panel">
+                        <div class="el-content uk-margin">
+                            <div class="uk-card uk-card-body">
+                                <div class="uk-margin-small">
+                                    <ul uk-switcher="connect: #js-484;animation: uk-animation-fade" class="uk-margin-small uk-subnav uk-subnav-divider el-nav">
+                                        <li>
+                                            <a href="#">Состав букета</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Доставка</a>
+                                        </li>
+                                    </ul>
+                                    <ul id="js-484" class="uk-switcher">
+                                        <li class="el-item">
+                                            <div class="el-content uk-margin">
+                                                <div class="el-item">
+                                                    <div class="uk-margin uk-text-small">
+                                                        <ul class="uk-list uk-list-divider">
+                                                            <?php echo $this->renderPosition('properties', array('style' => 'list')); ?>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div>
-                                                <div class="el-item uk-panel">
-                                                    <div class="el-content uk-margin">
-                                                        <div class="uk-h6 uk-margin-remove">Оплата заказов</div>
-                                                        <div class="">
-                                                            <div class="uk-margin-remove-bottom">
-                                                                <p>Бесплатная доставка заказов от 5000 рублей,
-                                                                    остальные 500 рублей.</p>
-                                                            </div>
-                                                        </div>
+                                        </li>
+                                        <li class="el-item">
+                                            <div class="el-content uk-margin">
+                                                <div class="el-item">
+                                                    <p>При заказе до 5000 руб. стоимость доставки составляет 500р.<br />
+                                                        При заказе свыше 5000р. доставка цветов по Москве бесплатная.<br />
+                                                        Доставка цветов по Москве работает ежедневно с 10:00 - 22:00
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <hr class="uk-divider-icon uk-margin-small">
+                                <div class="uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s" uk-grid>
+                                    <div class="uk-first-column">
+                                        <div class="el-item uk-panel">
+                                            <div class="el-content uk-margin">
+                                                <div class="uk-h6 uk-margin-remove">Телефоны для связи:</div>
+                                                <div class="">
+                                                    <p class="uk-text-small uk-margin-remove-bottom">
+                                                        <a href="tel:+79999676370">☎ 999 967-63-70</a>
+                                                        <br />
+                                                        <a href="tel:+79647213136">☎ 964 721-31-36</a>
+                                                        <br />
+                                                        <a href="tel:+79647213235">☎ 964 721-32-35</a>
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="el-item uk-panel">
+                                            <div class="el-content uk-margin">
+                                                <div class="uk-h6 uk-margin-remove">Оплата заказов</div>
+                                                <div class="">
+                                                    <div class="uk-margin-remove-bottom">
+                                                        <p>Бесплатная доставка заказов от 5000 рублей,
+                                                            остальные 500 рублей.</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -285,13 +279,13 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Контейнер детальной информации о товаре -->
-
     <div class="uk-margin-remove-vertical" uk-grid>
         <div class="uk-width-1-1@m uk-grid-item-match">
             <div class="uk-tile-muted uk-tile uk-tile-small">
@@ -349,21 +343,8 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                         <div class="uk-width-expand@m short-description">
                                             <span class="uk-text-large">Краткое описание товара</span>
                                             <?php echo $this->renderPosition('shorttext'); ?>
-                                        </div>
-                                        
-                                        <!-- Блок элемента значков -->
-                                        <!-- <div class="uk-width-expand@m">
-                                            <div class="uk-margin uk-display-inline">
-                                                <img src="/images/site/icons/free-delivery-badge.png" alt="" width="110" height="">
-                                            </div>
-                                            <div class="uk-margin uk-display-inline">
-                                                <img src="/images/site/icons/badge-delivery.png" alt="" width="128" height="">
-                                            </div>
-                                            <div class="uk-margin uk-display-inline">
-                                                <img src="/images/site/icons/badge-discount.png" alt="" width="128" height="">
-                                            </div>
-                                        </div> -->
-                                        
+                                        </div>                                      
+
                                         <!-- Блок списка параметров -->
                                         <div class="uk-width-expand@m">
                                             <div class="uk-margin uk-text-small">

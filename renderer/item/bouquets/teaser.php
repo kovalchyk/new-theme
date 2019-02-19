@@ -20,7 +20,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 ?>
 
 <div <?php if ($this->checkPosition('tags')) : ?> data-tag="<?php echo $this->renderPosition('tags'); ?>"<?php endif; ?> class="some-class">
-    <div class="el-item uk-card uk-card-primary uk-card-small uk-card-hover">
+    <div class="el-item uk-card uk-card-default uk-card-small uk-card-hover">
         
         <div class="uk-card-media-top uk-inline-clip uk-transition-toggle" tabindex="0"><!-- Здесь ошибка. Вынести в отдельный блок -->
 
@@ -42,7 +42,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
             <?php if ($this->checkPosition('top_right')) : ?>
                 <div class="uk-position-top-right uk-overlay uk-overlay-default uk-padding-small">
-                    <div class="uk-text-meta">
+                    <div class="uk-text-muted">
                         <div uk-icon="icon: arrow-left"></div><?php echo $this->renderPosition('top_right'); ?><div uk-icon="icon: arrow-right"></div>
                     </div>
                 </div>
