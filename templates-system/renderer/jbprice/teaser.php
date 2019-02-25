@@ -28,8 +28,8 @@ if ($this->checkPosition('price') || $this->checkPosition('button')) { ?>
         </div>
     </div>
 
-    <div class="uk-flex-middle uk-child-width-expand uk-margin-small" uk-grid>
-        <div class="">
+    <div class="uk-flex-middle uk-child-width-auto uk-margin-small" uk-grid>
+        <div class="uk-width-expand">
             <?php echo $this->renderPosition('button'); ?>
         </div>
         <div class="uk-text-right">
