@@ -43,8 +43,10 @@
         <position name="title">Title</position>
         <position name="image">Image</position>
         <position name="top_left">Image: Top Left Corner</position>
-        <position name="top_right">Image: Top Right Corner</position>
+        <position name="left">Image: Left Corner</position>
         <position name="bottom_left">Image: Bottom Left Corner</position>
+        <position name="top_right">Image: Top Right Corner</position>
+        <position name="right">Image: Right Corner</position>
         <position name="bottom_right">Image: Bottom Right Corner</position>
         <position name="bottom_overlay">Image: Bottom overlay</position>
         <position name="price">Price Block</position>
@@ -53,17 +55,16 @@
 
     <positions layout="related">
         <position name="title">Title</position>
-        <position name="sku">SKU</position>
         <position name="image">Image</position>
         <position name="top_left">Image: Top Left Corner</position>
+        <position name="left">Image: Left Corner</position>
+        <position name="bottom_left">Image: Bottom Left Corner</position>
         <position name="top_right">Image: Top Right Corner</position>
-        <position name="bottom_left">Image: ottom Left Corner</position>
+        <position name="right">Image: Right Corner</position>
         <position name="bottom_right">Image: Bottom Right Corner</position>
         <position name="bottom_overlay">Image: Bottom overlay</position>
-        <position name="price">Price</position>
-        <position name="rating">Rating</position>
-        <position name="buttonbuy">Button Buy</position>
-        <position name="favourite">Favourite</position>
+        <position name="price">Price Block</position>
+        <position name="quick-view">Quick view</position>
     </positions>
 
     <positions layout="subcategory_item">

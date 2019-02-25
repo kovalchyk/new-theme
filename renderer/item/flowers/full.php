@@ -23,10 +23,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
 
 <div class="uk-position-relative uk-panel">
     <!-- Шапка якуновича -->
-    <div class="uk-container uk-margin-remove-vertical">
+    <div class="uk-margin-remove-vertical">
         <div class="uk-grid-collapse" uk-grid>
-            <div class="uk-width-1-1@m uk-grid-item-match">
-                <div class="-uk-tile-default -uk-tile -uk-tile-small">
+            <div class="uk-width-1-1@m">
                     <!-- Элемент заголовка -->
                     <?php if ($this->checkPosition('title')) : ?>
                         <h1 class="uk-text-center uk-heading-primary uk-heading-line" uk-scrollspy-class>
@@ -49,25 +48,23 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             </div>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
     </div>
 
     <!-- Блок картинки цены -->
-    <div class="uk-container uk-margin-small">
+    <div class="uk-margin-small">
         <!-- Сетка для картинки и блока цены -->
         <div class="uk-grid-medium" uk-grid>
             <!-- Ячейка картинки и краткой информации -->
-            <div class="uk-width-expand@m uk-grid-item-match">
-
+            <div class="uk-width-expand@m">
                 <!-- Блок элемента картинки -->
                 <div class="uk-margin-small uk-inline-clip uk-transition-toggle" tabindex="0">
                     
                     <?php if ($this->checkPosition('image')) : ?>
-                    <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
-                        <?php echo $this->renderPosition('image'); ?>
-                    </div>
+                        <div class="uk-margin-remove" uk-scrollspy-class><!-- uk-transition-scale-up uk-transition-opaque -->
+                            <?php echo $this->renderPosition('image'); ?>
+                        </div>
                     <?php endif; ?>                                            
 
                     <div class="uk-position-center uk-light">
@@ -93,7 +90,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     <?php endif; ?>
 
                     <?php if ($this->checkPosition('bottom_right')) : ?>
-                        <div class="uk-position-top-center uk-overlay">
+                        <div class="uk-position-top-center uk-overlay uk-overlay-default uk-padding-small">
                             <div uk-icon="icon: arrow-left"></div><?php echo $this->renderPosition('bottom_right'); ?><div uk-icon="icon: arrow-right"></div>
                         </div>
                     <?php endif; ?>
@@ -105,7 +102,6 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             </ul>
                         </div>
                     <?php endif; ?>
-
                     <!--
                     <div class="uk-position-center-left uk-overlay uk-overlay-default">Center Left</div>
                     <div class="uk-position-center-right uk-overlay uk-overlay-default">Center Right</div>
@@ -113,7 +109,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     -->
                 </div>
 
-                <div class="uk-margin-small gallery">
+                <div class="uk-margin-small">
                     <?php if ($this->checkPosition('gallery')) : ?>
                         <!-- Элемент дополнительных фото товара -->
                         <div class="uk-flex uk-flex-center">
@@ -123,22 +119,21 @@ $tabsId = $this->app->jbstring->getId('tabs');
                 </div>
 
                 <!-- Блок под картинкой для рейтинга и поделиться -->
-                <div class="uk-card uk-card-small uk-card-body">
-                    <div class="uk-margin-small uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s uk-grid-small uk-grid-divider" uk-grid>
-
+                <div class="uk-card uk-card-small uk-card-body uk-visible@m">
+                    <div class="uk-margin-small uk-child-width-1-1 uk-child-width-1-2@s uk-grid-small" uk-grid>
                         <!-- Элемент рейтинга -->
                         <?php if ($this->checkPosition('rating')) : ?>
-                        <div uk-scrollspy-class class="el-item uk-panel">
-                            <div class="el-content">
-                                <div class="uk-text-muted">
-                                    <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
+                            <div uk-scrollspy-class class="el-item uk-panel">
+                                <div class="el-content">
+                                    <div class="uk-text-muted">
+                                        <?php echo $this->renderPosition('rating'); ?>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         <?php endif; ?>
 
                         <!-- Элемент поделиться -->
-                        <div uk-scrollspy-class class="el-item uk-panel uk-visible@l">
+                        <div uk-scrollspy-class class="el-item uk-panel">
                             <div class="el-content">
                                 <div class="uk-text-muted uk-text-center">
                                     <div class="uk-margin-small">Намекните на подарок</div>
@@ -149,7 +144,6 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                     <!-- Блок элемента краткого описания -->
@@ -160,17 +154,18 @@ $tabsId = $this->app->jbstring->getId('tabs');
                     <?php //endif; ?>
                 </div>
             </div>
+            
             <!-- Ячейка цены и дополнительной информации -->
-            <div class="uk-width-expand@m uk-grid-item-match">
-                <div class="uk-margin uk-child-width-1-1 uk-grid-match" uk-grid>
-
+            <div class="uk-width-expand@m">
+                <div>
                     <!-- Блок цены -->
                     <div uk-scrollspy-class class="el-item uk-panel">
                         <div class="el-content uk-margin">
                             <div class="uk-card uk-card-body">
-                                <div class="uk-grid-small uk-grid-divider" uk-grid>
-                                    <div class="uk-width-3-4">
-                                        <!-- Возможно, рендеринг позиции названия из элемента цены -->
+                                <div class="uk-grid-small" uk-grid>
+                                    <div class="uk-width-1-1 uk-width-3-4@s">
+                                        
+                                    <!-- Возможно, рендеринг позиции названия из элемента цены -->
                                         <?php if ($this->checkPosition('subtitle')) : ?>
                                             <h2 class="uk-h4 uk-text-truncate uk-margin-small">
                                                 <?php echo $this->renderPosition('subtitle'); ?>
@@ -181,35 +176,35 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                             <div class="item-price">
                                                 <?php echo $this->renderPosition('price'); ?>
                                             </div>
-                                        <?php endif; ?>                                        
+                                        <?php endif; ?>     
+                                  
                                     </div>
 
-                                    <div class="uk-width-1-4 uk-margin-small">
-                                        
-                                        <div class="uk-text-small uk-margin-small">
-                                            <a class="uk-link-heading"  href="tel:+79999676370">☎ 999 967-63-70</a>
-                                            <br />
-                                            <a class="uk-link-heading"  href="tel:+79647213136">☎ 964 721-31-36</a>
-                                            <br />
-                                            <a class="uk-link-heading"  href="tel:+79647213235">☎ 964 721-32-35</a>
-                                        </div>
+                                    <div class="uk-width-1-1 uk-width-1-4@s uk-margin-small">
+                                        <div class="uk-child-width-auto" uk-grid>                   
+                                            <div class="uk-text-small uk-margin-small">
+                                                <a class="uk-link-heading"  href="tel:+79999676370">☎ 999 967-63-70</a>
+                                                <br />
+                                                <a class="uk-link-heading"  href="tel:+79647213136">☎ 964 721-31-36</a>
+                                                <br />
+                                                <a class="uk-link-heading"  href="tel:+79647213235">☎ 964 721-32-35</a>
+                                            </div>
 
-                                        <div class="uk-text-small uk-text-muted">
-                                            <a uk-tooltip title="Доставка заказов в пределах МКАД до 2 часов *">- Доставим за 2 часа</span><br />
-                                            <a uk-tooltip title="Сделаем фото Вашего заказа перед доставкой">- Фото заказа</a><br />
-                                            <a uk-tooltip title="Чтобы Вы ничем не рисковали мы предлагаем оплату при получении">- Оплата курьеру</a>
+                                            <div class="uk-text-small uk-text-muted">
+                                                <a uk-tooltip title="Доставка заказов в пределах МКАД до 2 часов *">- Доставим за 2 часа</span><br />
+                                                <a uk-tooltip title="Сделаем фото Вашего заказа перед доставкой">- Фото заказа</a><br />
+                                                <a uk-tooltip title="Чтобы Вы ничем не рисковали мы предлагаем оплату при получении">- Оплата курьеру</a>
+                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
-
                     <!-- Блок дополнительной информации под ценой -->
                     <div uk-scrollspy-class class="el-item uk-panel">
-                        <div class="el-content uk-margin">
+                        <div class="el-content">
                             <div class="uk-card uk-card-body">
                                 <div class="uk-margin-small">
                                     <ul uk-switcher="connect: #js-484;animation: uk-animation-fade" class="uk-margin-small uk-subnav uk-subnav-divider el-nav">
@@ -244,9 +239,9 @@ $tabsId = $this->app->jbstring->getId('tabs');
                                         </li>
                                     </ul>
                                 </div>
-                                <hr class="uk-divider-icon uk-margin-small">
+                                <hr class="uk-margin-small">
                                 <div class="uk-child-width-1-1 uk-grid-match uk-child-width-1-2@s" uk-grid>
-                                    <div class="uk-first-column">
+                                    <div>
                                         <div class="el-item uk-panel">
                                             <div class="el-content uk-margin">
                                                 <div class="uk-h6 uk-margin-remove">Телефоны для связи:</div>
@@ -279,7 +274,6 @@ $tabsId = $this->app->jbstring->getId('tabs');
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -393,7 +387,7 @@ $tabsId = $this->app->jbstring->getId('tabs');
   
 
     <!-- Контейнер похожих букетов -->
-    <div class="uk-container uk-margin-remove-vertical">
+    <div class="uk-margin-remove-vertical">
         <div uk-grid>
             <div class="uk-width-1-1@m uk-grid-item-match">
 
@@ -419,13 +413,14 @@ $tabsId = $this->app->jbstring->getId('tabs');
             </div>
         </div>
     </div>
+    
     <!-- Контейнер для модуля/модулей -->
-
-        <!-- Модуль -->
-        <?php if ($this->checkPosition('jmodule')) : ?>
-            <div class="uk-margin">
-                <?php echo $this->renderPosition('jmodule'); ?>
-            </div>
-        <?php endif; ?>
+    <!-- Модуль -->
+    <?php if ($this->checkPosition('jmodule')) : ?>
+        <div class="uk-margin">
+            <?php echo $this->renderPosition('jmodule'); ?>
+        </div>
+    <?php endif; ?>
     <!-- Next Section for impressive functionality )) -->
+
 </div>

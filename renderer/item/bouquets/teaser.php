@@ -34,19 +34,27 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                 </div>
             <?php endif; ?>
 
-            <?php if ($this->checkPosition('top_left')) : ?>
-                <div class="uk-position-top-left uk-overlay">
-                    <?php echo $this->renderPosition('top_left', array('style' => 'block')); ?>
+            <?php if ($this->checkPosition('left')) : ?>
+                <div class="uk-position-left uk-overlay">
+                    <?php echo $this->renderPosition('left', array('style' => 'block')); ?>
                 </div>
             <?php endif; ?>
 
             <?php if ($this->checkPosition('top_right')) : ?>
-                <div class="uk-position-top-right uk-overlay uk-overlay-default uk-padding-small">
+                <div class="uk-position-top-right uk-overlay uk-overlay-default uk-padding-small uk-text-small">
                     <div class="uk-text-muted">
                         <div uk-icon="icon: arrow-left"></div><?php echo $this->renderPosition('top_right'); ?><div uk-icon="icon: arrow-right"></div>
                     </div>
                 </div>
             <?php endif; ?>
+
+            <?php if ($this->checkPosition('top_left')) : ?>
+                <div class="uk-position-top-left uk-overlay uk-padding-small">
+                    <div class="uk-flex uk-flex-column uk-text-muted uk-text-center uk-text-small">
+                        <?php echo $this->renderPosition('top_left'); ?>
+                    </div>
+                </div>
+            <?php endif; ?>            
 
             <?php if ($this->checkPosition('bottom_left')) : ?>
                 <div class="uk-position-bottom-left uk-overlay">
@@ -78,7 +86,7 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
 
             <?php if ($this->checkPosition('price')) : ?>
                 <?php echo $this->renderPosition('price'); ?>
-            <?php endif; ?>                    
+            <?php endif; ?>
 
         </div>
     </div>
