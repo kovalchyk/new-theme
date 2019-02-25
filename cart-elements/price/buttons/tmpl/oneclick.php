@@ -18,7 +18,7 @@ defined('_JEXEC') or die('Restricted access');
 
 ?>
 
-<span class="jsAddToCart jsGoTo uk-button uk-button-secondary jbprice-buttons-oneclick">
+<span class="jsAddToCart jsGoTo uk-button jbprice-buttons-oneclick"  title="Нажмите, чтобы сразу перейти к оформлению заказа" uk-tooltip >
 <span uk-icon="icon: credit-card"></span>
     <?php echo JText::_($params->get('oneclick_label', 'JBZOO_ELEMENT_PRICE_BUTTONS_ONECLICK_LABEL_DEFAULT')); ?>
 </span>

@@ -76,46 +76,10 @@ $align = $this->app->jbitem->getMediaAlign($item, $layout);
                 <h4 class="uk-h5 uk-margin-small uk-text-truncate"><?php echo $this->renderPosition('title'); ?></h4>
             <?php endif; ?>
 
-            <div class="teaser-price-rating uk-child-width-1-2 uk-grid-small" uk-grid>
+            <?php if ($this->checkPosition('price')) : ?>
+                <?php echo $this->renderPosition('price'); ?>
+            <?php endif; ?>                    
 
-                <?php if ($this->checkPosition('price')) : ?>
-                    <div class="price">
-                    <h3 class="uk-h4"><?php echo $this->renderPosition('price', array('style' => 'block')); ?></h3>
-                    </div>
-                <?php endif; ?>                    
-
-                <div class="teaser-rating">
-                    <?php if ($this->checkPosition('rating')) : ?>
-                        <div class="uk-align-right">
-                            <div style="zoom: 1" class="">
-                                <?php echo $this->renderPosition('rating', array('style' => 'block')); ?>
-                            </div>
-                        </div>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <div class="uk-flex-middle uk-margin-small uk-grid-small" uk-grid>
-                <div class="uk-width-2-3">
-                    <div class="cart-button">
-                        <?php if ($this->checkPosition('buttonbuy')) : ?>
-                            <?php echo $this->renderPosition('buttonbuy', array('style' => 'block')); ?>
-                        <?php endif; ?>
-                    </div>
-                </div>
-                <div class="uk-width-expand">
-                    <?php if ($this->checkPosition('favourite')) : ?>
-                        <div class="favorite-button uk-text-right">
-                            <?php echo $this->renderPosition('favourite'); ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <?php if ($this->checkPosition('quick-view')) : ?>
-                        <div class="item-quick-view uk-divider">
-                            <?php echo $this->renderPosition('quick-view', array('style' => 'block')); ?>
-                        </div>
-                    <?php endif; ?>                        
-                </div>
-            </div>
         </div>
     </div>
 </div>

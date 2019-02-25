@@ -47,10 +47,7 @@
         <position name="bottom_left">Image: Bottom Left Corner</position>
         <position name="bottom_right">Image: Bottom Right Corner</position>
         <position name="bottom_overlay">Image: Bottom overlay</position>
-        <position name="price">Price</position>
-        <position name="rating">Rating</position>
-        <position name="buttonbuy">Button Buy</position>
-        <position name="favourite">Favourite</position>
+        <position name="price">Price Block</position>
         <position name="quick-view">Quick view</position>
     </positions>
 

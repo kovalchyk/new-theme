@@ -38,7 +38,7 @@ $isUseStock = $this->_isUseStock();
     </span>
 
 <?php else : ?>
-    <span class="uk-text-success">
+    <span class="">
         <?php echo JText::_('JBZOO_ELEMENT_PRICE_BALANCE_AVAILABLE_YES'); ?>
     </span>
 
