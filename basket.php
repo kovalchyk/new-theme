@@ -23,6 +23,12 @@ $this->app->jbwrapper->start();
 
 ?><h1 class="title"><?php echo JText::_('JBZOO_CART_ITEMS'); ?></h1><?php
 
+echo '<div class="uk-placeholder uk-margin-small">
+            <span class="uk-text-lead uk-text-primary">Уважаемые посетители, обратите внимание, 8 марта доставка осуществляться не будет.
+            Доставка заказов возможна только до 05 марта и после 09 марта.<br />
+            Приносим свои извинения за предоставленные неудобства.</span>
+    </div>';
+
 echo $this->app->jblayout->renderIndex('basket');
 
 $this->app->jbwrapper->end();
