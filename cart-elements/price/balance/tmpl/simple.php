@@ -38,8 +38,8 @@ $isUseStock = $this->_isUseStock();
     </span>
 
 <?php else : ?>
-    <span class="">
-        <?php echo JText::_('JBZOO_ELEMENT_PRICE_BALANCE_AVAILABLE_YES'); ?>
+    <span class="uk-text-muted	">
+        <?php echo 'В наличии'/*JText::_('JBZOO_ELEMENT_PRICE_BALANCE_AVAILABLE_YES')*/; ?>
     </span>
 
 <?php endif; ?>

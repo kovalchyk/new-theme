@@ -23,7 +23,7 @@ if ($this->checkPosition('price') || $this->checkPosition('button')) { ?>
             <div class="uk-h4"><?php echo $this->renderPosition('price'); ?></div>
         </div>
 
-        <div class="uk-text-right uk-text-lead">
+        <div class="uk-text-right">
             <?php echo $this->renderPosition('balance'); ?>
         </div>
     </div>
@@ -32,7 +32,7 @@ if ($this->checkPosition('price') || $this->checkPosition('button')) { ?>
         <div class="uk-width-expand">
             <?php echo $this->renderPosition('button'); ?>
         </div>
-        <div class="uk-text-right">
+        <div class="uk-text-right uk-text-small">
             <?php echo $this->renderPosition('sku'); ?>
         </div>
     </div>
