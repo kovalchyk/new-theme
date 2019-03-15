@@ -21,9 +21,12 @@ $this->app->jblayout->setView($this);
 $this->app->document->setTitle(JText::_('JBZOO_CART_ITEMS'));
 $this->app->jbwrapper->start();
 
-?><h1 class="title"><?php echo JText::_('JBZOO_CART_ORDER_SUCCESS_CREATED'); ?></h1>
+?>
+<div class="uk-card uk-card-primary uk-card-body">
+    <h3 class="uk-card-title"><?php echo JText::_('JBZOO_CART_ORDER_SUCCESS_CREATED'); ?></h3>
+    <?php echo $this->app->jblayout->renderIndex('basket-success'); ?>
+</div>
 
-<?php echo $this->app->jblayout->renderIndex('basket-success'); ?>
 
 <?php
 $this->app->jbwrapper->end();

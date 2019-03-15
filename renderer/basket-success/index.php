@@ -20,4 +20,17 @@ $view = $this->getView();
 $this->app->jbassets->basket();
 $actionUrl = $this->app->jbrouter->cartOrderCreate($view->application->id, null);
 
-echo JText::_('JBZOO_CART_ORDER_SUCCESS_CREATED');
+// echo JText::_('JBZOO_CART_ORDER_SUCCESS_CREATED');
+echo '<hr class="uk-divider-icon">';
+
+// if user Authorised
+
+    $user = JFactory::getUser();
+     
+    if (!$user->guest) {
+        echo '<div class="uk-text-lead">Ожидайте СМС с деталями заказа и письмо на указанный e-mail.<br /> В ближайшее время с Вами свяжется менеджер для согласования деталей заказа.</div>';
+        echo '<div>Вы можете просмотреть историю своих заказов <a href="index.php?option=com_zoo&controller=clientarea&task=orders&Itemid=384">здесь</a></div>';
+    } else if ($user->guest) {
+        echo '<span class="uk-text-lead">Ожидайте СМС с деталями заказа и письмо на указанный e-mail.<br /> В ближайшее время с Вами свяжется менеджер для согласования деталей заказа.</span>';
+        echo '';
+    }
